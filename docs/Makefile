@@ -15,11 +15,12 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 IPYNB := $(shell find . -name '*.ipynb' -not -path '*/.ipynb_checkpoints/*' | sed 's/.* .*//g')
 IPYRST := $(patsubst %.ipynb,%.rst, $(IPYNB))
 
-.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest figs
+.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
 	@echo "  html       to make standalone HTML files"
+	@echo "  livehtml   to make standalone HTML files while watching the directory (requires sphinx-autobuild)"
 	@echo "  dirhtml    to make HTML files named index.html in directories"
 	@echo "  singlehtml to make a single large HTML file"
 	@echo "  pickle     to make pickle files"
@@ -40,7 +41,7 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 livehtml:
-	sphinx-autobuild -i .#* -i *.pyc -i .*.swp -i .*.swo -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	sphinx-autobuild -z ../dttxml -i '*.#*' -i '*.pyc' -i '*.swp' -i '*.swo' -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
@@ -54,6 +55,11 @@ dirhtml:
 
 singlehtml:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
+	@echo
+	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
+
+optimizer-dcc:
+	$(SPHINXBUILD) -D master_doc="optimizer/overview" -E -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/optimizer-dcc
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
 
@@ -151,11 +157,3 @@ svg-embed: $(SVGVIEW)
 
 %.html: %.ipynb
 	jupyter nbconvert --NbConvertApp.output_files_dir='{notebook_name}-ipynb' --to html $<
-
-figs:
-	python -m IIRrational.v2 :simple2: '' --plot_fit figs/simple2_fit_example.png --plot_order figs/simple2_fit_example_order.png --choose baseline
-	python -m IIRrational.v2 ../IIRrational_test_data/matlab/OplevPlant.mat '' --plot_fit figs/oplev_fit.png --plot_order figs/oplev_order.png --choose baseline -Xc plant -F ff --data_group ap.ey
-	python -m IIRrational.v2 ../IIRrational_test_data/matlab/OplevPlant.mat '' --plot_fit figs/oplev_fit_rel4.png --choose baseline -Xc plant -F ff --data_group ap.ey --relative_degree -4
-
-
-
