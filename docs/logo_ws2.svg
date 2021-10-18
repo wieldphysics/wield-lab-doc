@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="logo_ws.svg"
+   sodipodi:docname="logo_ws2.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
    id="svg1055"
    version="1.1"
-   viewBox="0 0 98.978705 49.185177"
+   viewBox="0 0 134.46118 49.185177"
    height="49.185177mm"
-   width="98.978706mm">
+   width="134.46118mm">
   <defs
      id="defs1049" />
   <sodipodi:namedview
@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284272"
-     inkscape:cx="85.609746"
-     inkscape:cy="115.23971"
+     inkscape:zoom="2.0000001"
+     inkscape:cx="122.23803"
+     inkscape:cy="136.13095"
      inkscape:document-units="mm"
      inkscape:current-layer="g2390"
      showgrid="false"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,7 +56,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-15.037957,-37.306221)">
+     transform="translate(-15.567124,-37.306221)">
     <g
        transform="translate(-70.707785,-41.778211)"
        id="g1026">
@@ -84,7 +84,7 @@
            sodipodi:nodetypes="cccc" />
         <path
            style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:0.7;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.521122;stop-color:#000000;stop-opacity:1"
-           d="m 94.903806,116.54641 c -0.648047,-0.24986 -0.786087,-0.33593 -0.248646,-0.62829 0.536574,-0.29245 1.869432,-0.58483 2.762021,-0.87726 0.892584,-0.29236 1.169459,-0.58481 0.576122,-0.87717 -0.593317,-0.29244 -1.943374,-0.58481 -2.798115,-0.87718 -0.855618,-0.29244 -1.04737,-0.58479 -0.400727,-0.87724 0.646656,-0.29238 2.009611,-0.58481 2.823938,-0.87719 0.814333,-0.29243 0.920095,-0.55218 0.222717,-0.8446"
+           d="m 94.771514,116.41412 c -0.648047,-0.24986 -0.786087,-0.33593 -0.248646,-0.62829 0.536574,-0.29245 1.869432,-0.58483 2.762021,-0.87726 0.892584,-0.29236 1.169459,-0.58481 0.576122,-0.87717 -0.593317,-0.29244 -1.943374,-0.58481 -2.798115,-0.87718 -0.855618,-0.29244 -1.04737,-0.58479 -0.400727,-0.87724 0.646656,-0.29238 2.009611,-0.58481 2.823938,-0.87719 0.814333,-0.29243 0.920095,-0.55218 0.222717,-0.8446"
            title="sin(x*1.05)"
            id="path1054"
            sodipodi:nodetypes="cccccccc" />
@@ -110,37 +110,15 @@
            sodipodi:nodetypes="ccccsccc" />
         <text
            xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.9564px;line-height:1.25;font-family:Garuda;-inkscape-font-specification:Garuda;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.498909"
-           x="131.53572"
-           y="96.710281"
-           id="text1137"><tspan
-             sodipodi:role="line"
-             id="tspan1135"
-             x="131.53572"
-             y="96.710281"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Garuda;-inkscape-font-specification:Garuda;stroke-width:0.498909">Wave</tspan></text>
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.9564px;line-height:1.25;font-family:Garuda;-inkscape-font-specification:Garuda;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.498909"
-           x="133.48596"
-           y="114.94439"
-           id="text1141"><tspan
-             sodipodi:role="line"
-             id="tspan1139"
-             x="133.48596"
-             y="114.94439"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Garuda;-inkscape-font-specification:Garuda;stroke-width:0.498909">State</tspan></text>
-        <text
-           xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.54925px;line-height:1.25;font-family:Garuda;-inkscape-font-specification:Garuda;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.155105"
-           x="131.87068"
-           y="123.56625"
+           x="131.49248"
+           y="94.382019"
            id="text1145"><tspan
              sodipodi:role="line"
              id="tspan1143"
-             x="131.87068"
-             y="123.56625"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Garuda;-inkscape-font-specification:Garuda;stroke-width:0.155105">physics modeling</tspan></text>
+             x="131.49248"
+             y="94.382019"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Garuda;-inkscape-font-specification:Garuda;stroke-width:0.155105" /></text>
         <text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.45254px;line-height:1.25;font-family:'Latin Modern Roman Demi';-inkscape-font-specification:'Latin Modern Roman Demi';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:0.52;stroke:none;stroke-width:0.498909;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
@@ -165,6 +143,27 @@
              x="98.838928"
              y="117.9733"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.45254px;line-height:1.25;font-family:'Latin Modern Roman Demi';-inkscape-font-specification:'Latin Modern Roman Demi';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;vector-effect:none;fill:#ffffff;fill-opacity:0.52;stroke:none;stroke-width:0.498909;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1">tate</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.6842px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:Carlito;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.155103"
+           x="131.93755"
+           y="92.511986"
+           id="text1145-6"><tspan
+             sodipodi:role="line"
+             x="131.93755"
+             y="92.511986"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Carlito;-inkscape-font-specification:Carlito;stroke-width:0.155103"
+             id="tspan1088">physics for </tspan><tspan
+             sodipodi:role="line"
+             x="131.93755"
+             y="107.11723"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Carlito;-inkscape-font-specification:Carlito;stroke-width:0.155103"
+             id="tspan1111">gravitational-wave</tspan><tspan
+             sodipodi:role="line"
+             x="131.93755"
+             y="121.72249"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Carlito;-inkscape-font-specification:Carlito;stroke-width:0.155103"
+             id="tspan1084">detector design</tspan></text>
       </g>
     </g>
   </g>
