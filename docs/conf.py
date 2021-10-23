@@ -40,30 +40,30 @@
 # ones.
 extensions = [
     #'nbsphinx',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.todo',
-    'sphinx.ext.coverage',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.githubpages',
-    'sphinx.ext.napoleon',
-    'sphinx.ext.viewcode',
+    "sphinx.ext.autodoc",
+    "sphinx.ext.todo",
+    "sphinx.ext.coverage",
+    "sphinx.ext.mathjax",
+    "sphinx.ext.githubpages",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.viewcode",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-source_suffix = ['.rst', '.md']
+source_suffix = [".rst", ".md"]
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = "index"
 
 # General information about the project.
-project = 'wavestate'
-copyright = '2021, Lee McCuller'
-author = 'Lee McCuller'
+project = "wavestate"
+copyright = "2021, Lee McCuller"
+author = "Lee McCuller"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -71,6 +71,7 @@ author = 'Lee McCuller'
 #
 # The short X.Y version.
 import wavestate.collection
+
 version = wavestate.collection.__version__
 # The full version, including alpha/beta/rc tags.
 release = wavestate.collection.__version__
@@ -85,12 +86,12 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['_build', '**.ipynb_checkpoints']
+exclude_patterns = ["_build", "**.ipynb_checkpoints"]
 
 # The name of the Pygments (syntax highlighting) style to use.
-#pygments_style = 'sphinx'
-#pygments_style = 'colorful'
-pygments_style = 'default'
+# pygments_style = 'sphinx'
+# pygments_style = 'colorful'
+pygments_style = "default"
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
@@ -99,29 +100,29 @@ todo_include_todos = True
 autodoc_default_flags = ["members", "undoc-members"]
 
 # -- Options for sourcelinks
-srclink_project = 'https://github.com/wavestate/wavestate'
-srclink_src_path = 'src/wavestate/'
-srclink_branch = 'main'
+srclink_project = "https://github.com/wavestate/wavestate"
+srclink_src_path = "src/wavestate/"
+srclink_branch = "main"
 
 # -- Options for HTML output ----------------------------------------------
 
-#useful for downloading the ipynb files
-html_sourcelink_suffix = ''
+# useful for downloading the ipynb files
+html_sourcelink_suffix = ""
 
 
-html_title = 'wavestate documentation'
-html_short_title = 'wavestate'
+html_title = "wavestate documentation"
+html_short_title = "wavestate"
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-#import sphinx_rtd_theme
-#html_theme = "sphinx_rtd_theme"
-#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+# import sphinx_rtd_theme
+# html_theme = "sphinx_rtd_theme"
+# html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
-#import jupyter_sphinx_theme
-#html_theme = "jupyter_sphinx_theme"
-#html_theme_path = [jupyter_sphinx_theme.get_html_theme_path()]
+# import jupyter_sphinx_theme
+# html_theme = "jupyter_sphinx_theme"
+# html_theme_path = [jupyter_sphinx_theme.get_html_theme_path()]
 
 html_theme = "alabaster"
 
@@ -130,24 +131,24 @@ html_theme = "alabaster"
 # documentation.
 #
 html_theme_options = dict(
-    description = "Documentation for the wavestate physics toolkit",
-    extra_nav_links = {
+    description="Documentation for the wavestate physics toolkit",
+    extra_nav_links={
         #'LIGO CDS repository' : 'https://git.ligo.org/CDS/dttxml'
     },
-    show_powered_by = False,
-    show_related = True,
-    #page_width = 'auto',
+    show_powered_by=False,
+    show_related=True,
+    # page_width = 'auto',
 )
 
 napoleon_type_aliases = {
-    #"CustomType": "mypackage.CustomType",
-    #"dict-like": ":term:`dict-like <mapping>`",
+    # "CustomType": "mypackage.CustomType",
+    # "dict-like": ":term:`dict-like <mapping>`",
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ["_static"]
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -155,29 +156,28 @@ html_static_path = ['_static']
 # This is required for the alabaster theme
 # refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
 html_sidebars = {
-    '**': [
-        'about.html',
+    "**": [
+        "about.html",
         #'globaltoc.html',
-        'navigation.html',
-        'relations.html',
-        'searchbox.html',
+        "navigation.html",
+        "relations.html",
+        "searchbox.html",
     ],
-#    'index': [
-#        'globaltoc.html',
-#        'navigation.html',
-#        'relations.html',
-#        'searchbox.html',
-#        'srclinks.html',
-#        ],
+    #    'index': [
+    #        'globaltoc.html',
+    #        'navigation.html',
+    #        'relations.html',
+    #        'searchbox.html',
+    #        'srclinks.html',
+    #        ],
 }
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'wavestate'
+htmlhelp_basename = "wavestate"
 
-#html_logo = 'logo/LIGO_F0900035-v1.jpg'
+# html_logo = 'logo/LIGO_F0900035-v1.jpg'
+
 
 def setup(app):
-    app.add_css_file('my_theme.css')
-    app.add_css_file('pygments_adjust.css')
-
-
+    app.add_css_file("my_theme.css")
+    app.add_css_file("pygments_adjust.css")
