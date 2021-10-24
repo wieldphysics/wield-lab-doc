@@ -5,7 +5,7 @@
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
-BUILDDIR      = ../build/sphinx
+BUILDDIR      = ./build/sphinx
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -15,7 +15,7 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 IPYNB := $(shell find . -name '*.ipynb' -not -path '*/.ipynb_checkpoints/*' | sed 's/.* .*//g')
 IPYRST := $(patsubst %.ipynb,%.rst, $(IPYNB))
 
-.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest
+.PHONY: help clean html livehtml dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest apidoc
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -140,6 +140,18 @@ doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
+
+apidoc:
+	sphinx-apidoc -o apidoc/pytest/ --implicit-namespaces ../wavestate-pytest/src/wavestate/
+	sphinx-apidoc -o apidoc/bunch/ --implicit-namespaces ../wavestate-bunch/src/wavestate/
+	sphinx-apidoc -o apidoc/utilities/ --implicit-namespaces ../wavestate-utilities/src/wavestate/
+	sphinx-apidoc -o apidoc/quantum/ --implicit-namespaces ../wavestate-quantum/src/wavestate/
+	sphinx-apidoc -o apidoc/control/ --implicit-namespaces ../wavestate-control/src/wavestate/
+	sphinx-apidoc -o apidoc/devel/ --implicit-namespaces ../wavestate-devel/src/wavestate/
+	sphinx-apidoc -o apidoc/AAA/ --implicit-namespaces ../wavestate-AAA/src/wavestate/
+	sphinx-apidoc -o apidoc/model/ --implicit-namespaces ../wavestate-model/src/wavestate/
+	sphinx-apidoc -o apidoc/LIGO-IFO/ --implicit-namespaces ../wavestate-LIGO-IFO/src/wavestate/
+	sphinx-apidoc -o apidoc/iirrational/ --implicit-namespaces ../wavestate-iirrational/src/wavestate/
 
 ipynb: $(IPYRST)
 

@@ -41,12 +41,14 @@
 extensions = [
     #'nbsphinx',
     "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
     "sphinx.ext.todo",
     "sphinx.ext.coverage",
     "sphinx.ext.mathjax",
     "sphinx.ext.githubpages",
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
+    "sphinx.ext.linkcode",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -64,6 +66,7 @@ master_doc = "index"
 project = "wavestate"
 copyright = "2021, Lee McCuller"
 author = "Lee McCuller"
+show_authors = False
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -181,3 +184,20 @@ htmlhelp_basename = "wavestate"
 def setup(app):
     app.add_css_file("my_theme.css")
     app.add_css_file("pygments_adjust.css")
+
+
+def linkcode_resolve(domain, info):
+    if domain != 'py':
+        return None
+    if not info['module']:
+        return None
+    filename = info['module'].replace('.', '/')
+    return "https://github.com/wavestate/wavestate/%s.py" % filename
+
+
+autosummary_generate = True
+autosummary_imported_members = False
+autosummary_generate_overwrite = True
+
+autodoc_mock_imports = ["pygraphviz", "pcaspy", ]
+

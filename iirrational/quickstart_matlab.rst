@@ -1,20 +1,20 @@
 .. _quickstart_matlab:
 
-.. module:: IIRrational.v1
+.. module:: wavestate.iirrational.v1
 
 Quickstart for Matlab
 ======================
 
 Although this is a python library, it may be used from Matlab via the `builtin (since 2014) python interfaces <https://www.mathworks.com/help/matlab/getting-started-with-python.html>`_
 
-Unfortunately, IIRrational cannot be directly run inside of the Matlab python interpreter. Matlab uses its own library ecosystem, including a number of critical numeric libraries shared by Scipy. At least on linux these are not ABI compatible and python will fail to import many scipy modules due to symbol lookup errors.
+Unfortunately, wavestate.iirrational cannot be directly run inside of the Matlab python interpreter. Matlab uses its own library ecosystem, including a number of critical numeric libraries shared by Scipy. At least on linux these are not ABI compatible and python will fail to import many scipy modules due to symbol lookup errors.
 
-A workaround is provided using the `msurrogate <http://msurrogate.readthedocs.io/en/latest/>`_ library, which allows IIRrational to be run as a separate process, while appearing native to Matlab. This not only fixes scipy, but also allows easy multithreaded access and extends the native Matlab python array wrapping conveniently to and from Numpy types.
+A workaround is provided using the `msurrogate <http://msurrogate.readthedocs.io/en/latest/>`_ library, which allows wavestate.iirrational to be run as a separate process, while appearing native to Matlab. This not only fixes scipy, but also allows easy multithreaded access and extends the native Matlab python array wrapping conveniently to and from Numpy types.
 
 Installation Steps
 --------------------
 
-First :ref:`Install IIRrational through pip <install>` and msurrogate will come with it automatically as a dependency. Now you only need to:
+First :ref:`Install wavestate.iirrational through pip <install>` and msurrogate will come with it automatically as a dependency. Now you only need to:
 
 1) check that python is working from Matlab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -24,28 +24,28 @@ See the `Matlab documentation <https://www.mathworks.com/help/matlab/matlab_exte
 On Linux (Fedora 25) with 2016a, this appears to *just work*, with Matlab finding and using the system python27. If redirected to system python35 matlab fails to find the python libraries. Either it does not support such a new python3 (likely for 2016a as the matlab.engine python module does not support python35). Please submit issues/pull requests to debug this on mac/windows particularly using non-native python distributions such as Anaconda.
      
 
-2) Add IIRrational to matlabpath
+2) Add wavestate.iirrational to matlabpath
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The matlab code to use is stored within the python module (both for IIRrational and msurrogate). To access it, just put it into the path using
+The matlab code to use is stored within the python module (both for wavestate.iirrational and msurrogate). To access it, just put it into the path using
 
 .. code-block:: Matlab
 
-    addpath(char(py.IIRrational.matlabpath()));
+    addpath(char(py.wavestate.iirrational.matlabpath()));
 
-This asks for the path through the python function call matlabpath of the IIRrational module. The Matlab `char` function converts from a python string. If this throws an error, then either
+This asks for the path through the python function call matlabpath of the wavestate.iirrational module. The Matlab `char` function converts from a python string. If this throws an error, then either
 
  - Python is not found by Matlab
- - IIRrational is not installed, or **not installed into the python environment found by Matlab.** Check which python Matlab found. If you are running from an install from Anaconda, Homebrew, macports et al, then Matlab may not be using the non-system python!
+ - wavestate.iirrational is not installed, or **not installed into the python environment found by Matlab.** Check which python Matlab found. If you are running from an install from Anaconda, Homebrew, macports et al, then Matlab may not be using the non-system python!
 
 
-If this is working, then you may either add this code to all projects wishing to use the IIRrational library, or get the paths returned from this function and add them manually to a permanent matlabrc or to MATLABPATH.
+If this is working, then you may either add this code to all projects wishing to use the wavestate.iirrational library, or get the paths returned from this function and add them manually to a permanent matlabrc or to MATLABPATH.
 
 
 Two ways to start
 ------------------
 
-The separate python process hosting IIRrational communicates with Matlab through sockets. The addresses for this communication are held in a cookie file provided by the python host process. This process must be started with the location to write the cookie file, and then Matlab must be given the location of this file. Using sockets, the python process may even reside on a different computer than Matlab. Since Matlab's python can start this process itself, first try the direct method.
+The separate python process hosting wavestate.iirrational communicates with Matlab through sockets. The addresses for this communication are held in a cookie file provided by the python host process. This process must be started with the location to write the cookie file, and then Matlab must be given the location of this file. Using sockets, the python process may even reside on a different computer than Matlab. Since Matlab's python can start this process itself, first try the direct method.
 
 Direct Subprocess Method
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -53,15 +53,15 @@ Direct Subprocess Method
 .. code-block:: Matlab
   :emphasize-lines: 1-4
 
-  addpath(char(py.IIRrational.matlabpath()));
+  addpath(char(py.wavestate.iirrational.matlabpath()));
 
   %Without arguments, a subprocess is started
-  iir = IIRrational.surrogate();
+  iir = wavestate.iirrational.surrogate();
 
   %positional arguments MUST be within a cell array due to
   %the calling convention of the python-wrapping done by msurrogate
   %(they are also discouraged for readability in favor of more verbose keyword arguments)
-  dat = iir.testing.IIRrational_data({'simple1'});
+  dat = iir.testing.iirrational_data({'simple1'});
 
   %Create native keyword arguments
   kw = struct();
@@ -90,22 +90,22 @@ Check out the start options with
 
 .. code-block:: bash
 
-    python -m IIRrational.matlab -h
+    python -m wavestate.iirrational.matlab -h
 
 and minimally start it using
 
 .. code-block:: bash
 
-    python -m IIRrational.matlab -c workspace/path/IIRrational.cookie
+    python -m wavestate.iirrational.matlab -c workspace/path/wavestate.iirrational.cookie
 
 now inside of matlab
 
 .. code-block:: Matlab
 
-  addpath(char(py.IIRrational.matlabpath()));
+  addpath(char(py.wavestate.iirrational.matlabpath()));
 
   %with arguments, a cookie filename to connect to is assumed
-  iir = IIRrational.surrogate('workspace/path/IIRrational.cookie');
+  iir = wavestate.iirrational.surrogate('workspace/path/wavestate.iirrational.cookie');
   ...
 
 
@@ -113,7 +113,7 @@ If the process is created on a separate machine, the :option:`--public` option s
 
 Usage
 -------
-The return value of the Matlab `IIRrational.surrogate` function is an object representing the proxy workspace. It has a similar structure to the python modules, with a `.v1` attribute providing access to the functions in the python `v1` submodule. It also has `plots` and `annotation`. Tab completion should work for the objects, so try it out to find methods to call and properites to inspect.
+The return value of the Matlab `wavestate.iirrational.surrogate` function is an object representing the proxy workspace. It has a similar structure to the python modules, with a `.v1` attribute providing access to the functions in the python `v1` submodule. It also has `plots` and `annotation`. Tab completion should work for the objects, so try it out to find methods to call and properites to inspect.
 
 Calling Conventions
 ^^^^^^^^^^^^^^^^^^^^
@@ -137,7 +137,7 @@ Gotchas
  - The python subprocess has its own current working directory, so relative paths will NOT be with respect to the current Matlab path, but the python one (likely the directory where matlab was started).
  - Interactive plotting requires `matplotlib to be setup with an appropriate backend. <https://matplotlib.org/faq/usage_faq.html#what-is-a-backend>`_
  - The python workspace currently does not automatically clean up old objects, so it can eat memory if used for an extended period. Garbage collection is planned but not particularly tested
- - in principle, multiple users/workspaces could connect to a single IIRrational process. This is untested.
+ - in principle, multiple users/workspaces could connect to a single wavestate.iirrational process. This is untested.
  - Only python lists, tuples, dictionaries and numpy arrays are transmitted. Everything else is a proxy object into the python process. Native types like dicts will be proxies as well if they contain any proxied object.
  - Proxy objects will be "unwrapped" on the python side, so function arguments can be a proxy and python will use the native object in its workspace (good for :class:`MultiReprFilterZ` objects returned with :func:`data2filter`).
 

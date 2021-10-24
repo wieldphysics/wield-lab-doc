@@ -5,7 +5,7 @@ IIRrational: Rational Function fitting for System ID
 
 Release v\ |version|. (:ref:`Installation <install>`)
 
-IIRrational is an function-fitting library for signal processing and system identification. Fitting both poles and zeros for a rational function is a nonlinear optimization problem and typical formulations require an initial guess for convergence.
+wavestate.iirrational is an function-fitting library for signal processing and system identification. Fitting both poles and zeros for a rational function is a nonlinear optimization problem and typical formulations require an initial guess for convergence.
 
 This library uses a two stage approach, where the second stage is a typical gradient descent optimization, but the first is a linear technique with fast and reliable convergence, but requires gratuitous over-fitting.
 
@@ -26,11 +26,11 @@ see :ref:`What to Expect <expect>` and :ref:`quickstart <quickstart>`
 
 .. code-block:: python
 
-  import IIRrational.v2
-  from IIRrational.testing import IIRrational_data
+  import wavestate.iirrational.v2
+  from wavestate.iirrational.testing import iirrational_data
 
-  dataset = IIRrational_data('simple2')
-  results = IIRrational.v2.data2filter(
+  dataset = iirrational_data('simple2')
+  results = wavestate.iirrational.v2.data2filter(
       data = dataset.data,
       F_Hz = dataset.F_Hz,
       SNR  = dataset.SNR,
@@ -144,7 +144,7 @@ have converged better.
 
 .. note::
   when the library is installed, the command line tool may also be called via::
-    python -m IIRrational.v2 [args...]
+    python -m wavestate.iirrational.v2 [args...]
 
 
 

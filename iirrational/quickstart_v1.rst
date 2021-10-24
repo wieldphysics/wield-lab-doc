@@ -4,11 +4,11 @@
 Quickstart V1
 =============
 
-.. module:: IIRrational
+.. module:: wavestate.iirrational
 
-.. module:: IIRrational.v1
+.. module:: wavestate.iirrational.v1
 
-:ref:`Install IIRrational through pip <install>` as a first step. Be sure to run pip from the environment you will be using IIRrational from.
+:ref:`Install wavestate.iirrational through pip <install>` as a first step. Be sure to run pip from the environment you will be using wavestate.iirrational from.
 
 
 First Fit
@@ -18,12 +18,12 @@ As seen in the introduction page, the minimal code to fit and see it is:
 
 .. code-block:: python
 
-  import IIRrational.v1
-  import IIRrational.plots
-  from IIRrational.testing import IIRrational_data
+  import wavestate.iirrational.v1
+  import wavestate.iirrational.plots
+  from wavestate.iirrational.testing import iirrational_data
 
-  dataset = IIRrational_data('simple2')
-  fit = IIRrational.v1.data2filter(
+  dataset = iirrational_data('simple2')
+  fit = wavestate.iirrational.v1.data2filter(
       data = dataset.data,
       F_Hz = dataset.F_Hz,
       SNR  = dataset.SNR,
@@ -34,7 +34,7 @@ As seen in the introduction page, the minimal code to fit and see it is:
   print(fit.fitter.ZPK)
 
   #plot the output
-  ax = IIRrational.plots.plot_fitter_flag(fit.fitter)
+  ax = wavestate.iirrational.plots.plot_fitter_flag(fit.fitter)
 
 .. figure:: figs/simple2_fit_example.png
 
@@ -67,26 +67,26 @@ You can see the available cases at
  - internal https://github.com/mccullerlp/IIRrational/blob/master/IIRrational/testing/__init__.py
  - contrbuted https://github.com/mccullerlp/IIRrational/blob/master/IIRrational_test_data/__init__.py
 
-these are accessed through the functions :func:`IIRrational.testing.IIRrational_data` and :func:`IIRrational_test_data.IIRrational_data_dev` using a keyword set name. The random sets also take a :keyword:`set_num` argument and :keyword:`instance_num`. For the random sets, the set_num changes the last data point (10Hz to 100Hz) and also linear vs. log distribution. The instance number seeds the random noise added, so that the fitting is deterministic for a given instance.
+these are accessed through the functions :func:`wavestate.iirrational.testing.iirrational_data` and :func:`IIRrational_test_data.iirrational_data_dev` using a keyword set name. The random sets also take a :keyword:`set_num` argument and :keyword:`instance_num`. For the random sets, the set_num changes the last data point (10Hz to 100Hz) and also linear vs. log distribution. The instance number seeds the random noise added, so that the fitting is deterministic for a given instance.
 
 The :func:`data2filter` function can take as its first positional argument a dictionary with the other keywords. This allows the sets to be fit and tested using only:
 
 .. code-block:: python
 
-  import IIRrational.v1
-  import IIRrational.plots
-  from IIRrational.testing import IIRrational_data
+  import wavestate.iirrational.v1
+  import wavestate.iirrational.plots
+  from wavestate.iirrational.testing import iirrational_data
 
-  fit = IIRrational.v1.data2filter(
-    IIRrational_data('simple2'),
+  fit = wavestate.iirrational.v1.data2filter(
+    iirrational_data('simple2'),
   )
-  ax = IIRrational.plots.plot_fitter_flag(fit.fitter)
+  ax = wavestate.iirrational.plots.plot_fitter_flag(fit.fitter)
 
 
 Fitting
 ---------
 
-.. py:function:: IIRrational.v1.data2filter
+.. py:function:: wavestate.iirrational.v1.data2filter
 
    Fits frequency-response data using 2-stage process
 
@@ -175,22 +175,22 @@ The can be specified in a dictionary, and there is a collection of "good" sets f
 
 .. code-block:: python
 
-  import IIRrational.v1
-  import IIRrational.plots
-  from IIRrational.testing import IIRrational_data
+  import wavestate.iirrational.v1
+  import wavestate.iirrational.plots
+  from wavestate.iirrational.testing import iirrational_data
 
-  fit = IIRrational.v1.data2filter(
-    IIRrational_data('simple0E'),
+  fit = wavestate.iirrational.v1.data2filter(
+    iirrational_data('simple0E'),
     SNR = 1,
     hints = [
         {'resavg_EthreshOrdDn': 0.1,
          'resavg_RthreshOrdC':  None,
          'resavg_RthreshOrdDn': None,
          'resavg_RthreshOrdUp': None},
-        IIRrational.v1.hintsets.quiet,
+        wavestate.iirrational.v1.hintsets.quiet,
     ]
   )
-  ax = IIRrational.plots.plot_fitter_flag(fit.fitter)
+  ax = wavestate.iirrational.plots.plot_fitter_flag(fit.fitter)
 
 
 Gotchas
@@ -217,7 +217,7 @@ The data2filter output :class:`FitAid` object can output a digest with plots of 
 See the end of the :doc:`notebooks/random_example` note for an example call. And the digest output can be seen in the notebook as it uses the :keyword:`ipy_digest` argument.
 
 
-.. py:method:: IIRrational.v1.FitAid.digest_write
+.. py:method:: wavestate.iirrational.v1.FitAid.digest_write
 
    Write a digest of the fit algorithm in Markdown
 
@@ -239,7 +239,7 @@ Contributing Testcases
 
 To improve the library, more examples of real-world usage are needed. A function call with nearly the same interface as :func:`data2filter` exists for this purpose. Please email, add an issue or pull request with collections of data. The Matlab format from this is relatively compact and easy to read, so please use this function to provide data. If you have larger test-suites for evential MIMO or Feedforward testing, hdf5 format is preferred but a standard layout has not yet been established.
 
-.. py:function:: IIRrational.v1.data2testcase
+.. py:function:: wavestate.iirrational.v1.data2testcase
 
   Store fit-data in a common format for inclusion into the test-suite
 

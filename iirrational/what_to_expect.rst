@@ -4,7 +4,7 @@
 What to expect
 ==============
 
-IIRrational works in two stages:
+wavestate.iirrational works in two stages:
   * an initial (rational) stage which develops an initial fit without requiring a guess from the user
   * a fit optimizer, combined with order reduction trials
 

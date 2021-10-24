@@ -2,7 +2,7 @@
 
 > `v1.fit_sequence`
 
-Version 1 smart fitter in IIRrational library. Uses SVD method with high order over-fitting, then switches to nonlinear fits with heuristics to remove poles and zeros down to a reasonable system order.
+Version 1 smart fitter in wavestate.iirrational library. Uses SVD method with high order over-fitting, then switches to nonlinear fits with heuristics to remove poles and zeros down to a reasonable system order.
 
 ## `1` initial
 
