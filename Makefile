@@ -41,7 +41,7 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 livehtml:
-	sphinx-autobuild -z ../dttxml -i '*.#*' -i '*.pyc' -i '*.swp' -i '*.swo' -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	sphinx-autobuild --ignore '*.#*' --ignore '*.pyc' --ignore '*.swp' --ignore '*.swo' -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html --open-browser
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html

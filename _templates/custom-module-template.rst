@@ -66,12 +66,18 @@
 
    {% for item in attributes %}
    .. autoattribute:: {{ item }}
+
+
    {%- endfor %}
 
    {% for item in functions %}
    .. autofunction:: {{ item }}
+
+
    {%- endfor %}
 
    {% for item in exceptions %}
    .. autoexception:: {{ item }}
+
+
    {%- endfor %}

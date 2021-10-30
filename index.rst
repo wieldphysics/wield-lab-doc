@@ -6,14 +6,15 @@ wavestate
 Release v\ |version|. (:ref:`Installation <install>`)
 
 
+.. toctree::
+    :maxdepth: 2
+
+    TEST
+    API
+
+
 Packages
 -------------------------
-.. toctree::
-   :maxdepth: 2
-
-      API
-
-
 .. highlight:: python
    :linenothreshold: 5
 

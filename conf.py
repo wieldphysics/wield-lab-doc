@@ -178,12 +178,16 @@ html_sidebars = {
 # Output file base name for HTML help builder.
 htmlhelp_basename = "wavestate"
 
-# html_logo = 'logo/LIGO_F0900035-v1.jpg'
+html_logo = 'logo/logo_ws_block.svg'
 
 
 def setup(app):
     app.add_css_file("my_theme.css")
     app.add_css_file("pygments_adjust.css")
+
+    # add the evennt handler to bond tests to their outputs
+    app.connect('autodoc-process-docstring', autodoc_process_docstring)
+    return
 
 
 def linkcode_resolve(domain, info):
@@ -200,4 +204,72 @@ autosummary_imported_members = False
 autosummary_generate_overwrite = True
 
 autodoc_mock_imports = ["pygraphviz", "pcaspy", ]
+
+
+import os
+import re
+def autodoc_process_docstring(app, what, name, obj, options, lines):
+    """Detects pytests and augments their documentation to include links to their output files
+    """
+
+    ":download:`this example script <../example.py>`"
+    tdir = os.path.join(app.srcdir, 'test_results')
+
+    if what == 'module':
+        return
+
+    if what != 'function':
+        return
+
+    try:
+        ofile = obj.__code__.co_filename
+    except AttributeError:
+        return
+
+    # check for unusual objects like DeepBunch
+    if not isinstance(ofile, str):
+        return
+
+    fpath, fname = os.path.split(ofile)
+
+    istest = False
+
+    tpath = os.path.join(tdir, fname)
+    if os.path.exists(tpath):
+        istest = True
+
+    tname = obj.__name__.split('.')[-1]
+    # could also check if the containing module has pytest fixtures, but this seems to work
+
+    if istest:
+        # print("FOUND A TEST: ", name)
+        # raise Exception("EXPLODE")
+        tdirs = os.listdir(tpath)
+        mydirs = []
+
+        for subdir in tdirs:
+            if '[' not in subdir:
+                if subdir == tname:
+                    mydirs.append(subdir)
+            else:
+                if re.fullmatch(re.escape(tname)+r'\[.*\]', subdir):
+                    mydirs.append(subdir)
+
+        if not lines:
+            lines.append("This is a pytest needing documentation")
+            lines.append("")
+            lines.append("")
+
+        if mydirs:
+            print("COOL", mydirs)
+
+        for d in mydirs:
+            dpath = os.path.join(tpath, d)
+            lines.append("")
+            lines.append("{}".format(d))
+            for fpath in os.listdir(dpath):
+                print("APPEND")
+                lines.append("- :download:`{}</{}>`".format(fpath, os.path.relpath(os.path.join(dpath, fpath), app.srcdir)))
+                print(lines[-1])
+    return
 
