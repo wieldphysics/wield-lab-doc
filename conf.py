@@ -40,7 +40,12 @@
 # ones.
 extensions = [
     #'nbsphinx',
+    "sphinx_toolbox.assets",
+    "sphinx_toolbox.code",
+    "sphinx_toolbox.decorators",
+    "sphinx_toolbox.collapse",
     "sphinx.ext.autodoc",
+    "sphinx.ext.extlinks",
     "sphinx.ext.autosummary",
     "sphinx.ext.todo",
     "sphinx.ext.coverage",
@@ -48,7 +53,8 @@ extensions = [
     "sphinx.ext.githubpages",
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
-    "sphinx.ext.linkcode",
+    # "sphinx.ext.linkcode",
+    "linkcode_ws",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -115,19 +121,8 @@ html_sourcelink_suffix = ""
 
 html_title = "wavestate documentation"
 html_short_title = "wavestate"
-
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-# import sphinx_rtd_theme
-# html_theme = "sphinx_rtd_theme"
-# html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-# import jupyter_sphinx_theme
-# html_theme = "jupyter_sphinx_theme"
-# html_theme_path = [jupyter_sphinx_theme.get_html_theme_path()]
-
-html_theme = "alabaster"
+#html_theme = "alabaster"
+html_theme = "sphinx_rtd_theme"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -206,13 +201,44 @@ autosummary_generate_overwrite = True
 autodoc_mock_imports = ["pygraphviz", "pcaspy", ]
 
 
+# TODO, change this. Currently should point to srcdir
+assets_dir = '.'
+
+
+def linkcode_ws_resolve(domain, info):
+    if domain != 'py':
+        return None, None
+    if not info['module']:
+        return None, None
+    module = info['module']
+    filename = module.replace('.', '/')
+    if module.startswith('wavestate.quantum'):
+        return 'github', "https://github.com/wavestate/wavestate-quantum/tree/main/src/%s.py" % filename
+    elif module.startswith('wavestate.bunch'):
+        return 'github', "https://github.com/wavestate/wavestate-bunch/tree/main/src/%s.py" % filename
+    elif module.startswith('wavestate.pytest'):
+        return 'github', "https://github.com/wavestate/wavestate-pytest/tree/main/src/%s.py" % filename
+    elif module.startswith('wavestate.utilities'):
+        return 'github', "https://github.com/wavestate/wavestate-utilities/tree/main/src/%s.py" % filename
+    elif module.startswith('wavestate.declarative'):
+        return 'github', "https://github.com/wavestate/wavestate-declarative/tree/main/src/%s.py" % filename
+    elif module.startswith('wavestate.LIGO.IFO'):
+        return 'git.ligo', "https://git.ligo.org/wavestate/wavestate-LIGO-IFO/-/tree/main/src/%s.py" % filename
+    else:
+        return None, None
+
+def linkcode_resolve(domain, info):
+    """in case linkcode is working but linkcode_ws is not
+    """
+    return linkcode_ws_resolve(domain, info)[1]
+
+
+
 import os
 import re
 def autodoc_process_docstring(app, what, name, obj, options, lines):
     """Detects pytests and augments their documentation to include links to their output files
     """
-
-    ":download:`this example script <../example.py>`"
     tdir = os.path.join(app.srcdir, 'test_results')
 
     if what == 'module':
@@ -266,10 +292,26 @@ def autodoc_process_docstring(app, what, name, obj, options, lines):
         for d in mydirs:
             dpath = os.path.join(tpath, d)
             lines.append("")
-            lines.append("{}".format(d))
-            for fpath in os.listdir(dpath):
-                print("APPEND")
-                lines.append("- :download:`{}</{}>`".format(fpath, os.path.relpath(os.path.join(dpath, fpath), app.srcdir)))
-                print(lines[-1])
+            lines.append(".. collapse:: {}".format(d))
+            lines.append("           ")
+            for fpath in ordered_test_outputs(dpath):
+                lines.append("    * :download:`{}</{}>`".format(fpath, os.path.relpath(os.path.join(dpath, fpath), app.srcdir)))
+            lines.append("")
+        print("OUT: ", name)
+        for line in lines:
+            print(line)
     return
+
+def ordered_test_outputs(dpath):
+    files = os.listdir(dpath)
+
+    files.sort(key=lambda f: os.stat(os.path.join(dpath, f)).st_mtime)
+
+    capname = 'capture.txt'
+    if capname in files:
+        files.remove(capname)
+        # reinsert at the beginning
+        files[0:0] = [capname]
+
+    return files
 
