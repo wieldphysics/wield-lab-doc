@@ -24,8 +24,14 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 """
-# import os
-# import sys
+#import sys
+import os
+import re
+
+import inspect
+import importlib
+from wavestate.sphinx import ws_parse_cov_html
+
 # sys.path.insert(0, os.path.abspath('.'))
 
 
@@ -44,6 +50,7 @@ extensions = [
     "sphinx_toolbox.code",
     "sphinx_toolbox.decorators",
     "sphinx_toolbox.collapse",
+    "myst_parser",
     "sphinx.ext.autodoc",
     "sphinx.ext.extlinks",
     "sphinx.ext.autosummary",
@@ -53,8 +60,9 @@ extensions = [
     "sphinx.ext.githubpages",
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
+    'sphinx.ext.autosectionlabel',
     # "sphinx.ext.linkcode",
-    "linkcode_ws",
+    "wavestate.sphinx.linkcode_ws",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -66,11 +74,11 @@ templates_path = ["_templates"]
 source_suffix = [".rst", ".md"]
 
 # The master toctree document.
-master_doc = "index"
+master_doc = "docs/index"
 
 # General information about the project.
 project = "wavestate"
-copyright = "2021, Lee McCuller"
+copyright = "2022, Lee McCuller"
 author = "Lee McCuller"
 show_authors = False
 
@@ -95,7 +103,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ["_build", "**.ipynb_checkpoints"]
+exclude_patterns = ["_build", "**.ipynb_checkpoints", "testing"]
 
 # The name of the Pygments (syntax highlighting) style to use.
 # pygments_style = 'sphinx'
@@ -135,8 +143,28 @@ html_theme_options = dict(
     },
     show_powered_by=False,
     show_related=True,
-    # page_width = 'auto',
+    page_width='auto',
+
+
 )
+
+# options for sphinx_rtd_theme
+html_theme_options = {
+    #'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
+    #'analytics_anonymize_ip': False,
+    'logo_only': False,
+    'display_version': False,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': True,
+    'vcs_pageview_mode': '',
+    #'style_nav_header_background': 'white',
+    # Toc options
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 5,
+    'includehidden': True,
+    'titles_only': False
+}
 
 napoleon_type_aliases = {
     # "CustomType": "mypackage.CustomType",
@@ -156,7 +184,7 @@ html_static_path = ["_static"]
 html_sidebars = {
     "**": [
         "about.html",
-        #'globaltoc.html',
+        'globaltoc.html',
         "navigation.html",
         "relations.html",
         "searchbox.html",
@@ -170,19 +198,12 @@ html_sidebars = {
     #        ],
 }
 
+
+
 # Output file base name for HTML help builder.
 htmlhelp_basename = "wavestate"
 
-html_logo = 'logo/logo_ws_block.svg'
-
-
-def setup(app):
-    app.add_css_file("my_theme.css")
-    app.add_css_file("pygments_adjust.css")
-
-    # add the evennt handler to bond tests to their outputs
-    app.connect('autodoc-process-docstring', autodoc_process_docstring)
-    return
+html_logo = 'docs/logo/logo_ws_block.svg'
 
 
 def linkcode_resolve(domain, info):
@@ -198,34 +219,96 @@ autosummary_generate = True
 autosummary_imported_members = False
 autosummary_generate_overwrite = True
 
-autodoc_mock_imports = ["pygraphviz", "pcaspy", ]
+autodoc_mock_imports = [
+    "pygraphviz",
+    "pcaspy",
+    "control",
+]
 
+python_use_unqualified_type_names = True
+
+add_module_names = False
+show_authors = True
 
 # TODO, change this. Currently should point to srcdir
 assets_dir = '.'
 
+coverage_folder = './testing/test_results/coverage/'
+test_results_folder = 'testing/test_results'
+
+try:
+    coverage_d = ws_parse_cov_html.parse_cov_index(os.path.join(coverage_folder, 'index.html'))
+except Exception:
+    coverage_d = None
 
 def linkcode_ws_resolve(domain, info):
     if domain != 'py':
-        return None, None
+        return {}
     if not info['module']:
-        return None, None
+        return {}
+    #print("INFO: ", info)
     module = info['module']
+    fullname = info.get('fullname', None)
     filename = module.replace('.', '/')
+    d = {}
+
+    def lno(pre):
+        fileline = None
+        try:
+            mod = importlib.import_module(module)
+            obj = mod
+            for name in fullname.split('.'):
+                obj = getattr(obj, name, None)
+                if obj is None:
+                    break
+            if obj is not None:
+                codelines, fileline = inspect.getsourcelines(obj)
+        except Exception:
+            fileline = None
+        if fileline is None:
+            return ''
+        else:
+            return '#{}{}'.format(pre, fileline)
+
+    if coverage_d is not None:
+        pyfname = filename + '.py'
+        cov_fname = coverage_d.get(pyfname, None)
+        if cov_fname is not None:
+            # converted to output relative to the outdir
+            # cov_fpath = os.path.join('/', coverage_folder, cov_fname)
+            # converted to output relative to the srcdir
+            # needs the double __ since one gets removed by Sphinx.
+            # Seems fragile but works for now
+            cov_fpath = os.path.join(r'/_static/coverage/', cov_fname)
+            d['cov'] = cov_fpath + lno('t')
+
+
     if module.startswith('wavestate.quantum'):
-        return 'github', "https://github.com/wavestate/wavestate-quantum/tree/main/src/%s.py" % filename
+        d['github'] = "https://github.com/wavestate/wavestate-quantum/tree/main/src/%s.py" % filename + lno('L')
     elif module.startswith('wavestate.bunch'):
-        return 'github', "https://github.com/wavestate/wavestate-bunch/tree/main/src/%s.py" % filename
+        d['github'] = "https://github.com/wavestate/wavestate-bunch/tree/main/src/%s.py" % filename + lno('L')
     elif module.startswith('wavestate.pytest'):
-        return 'github', "https://github.com/wavestate/wavestate-pytest/tree/main/src/%s.py" % filename
+        d['github'] = "https://github.com/wavestate/wavestate-pytest/tree/main/src/%s.py" % filename + lno('L')
     elif module.startswith('wavestate.utilities'):
-        return 'github', "https://github.com/wavestate/wavestate-utilities/tree/main/src/%s.py" % filename
+        d['github'] = "https://github.com/wavestate/wavestate-utilities/tree/main/src/%s.py" % filename + lno('L')
     elif module.startswith('wavestate.declarative'):
-        return 'github', "https://github.com/wavestate/wavestate-declarative/tree/main/src/%s.py" % filename
+        d['github'] = "https://github.com/wavestate/wavestate-declarative/tree/main/src/%s.py" % filename + lno('L')
     elif module.startswith('wavestate.LIGO.IFO'):
-        return 'git.ligo', "https://git.ligo.org/wavestate/wavestate-LIGO-IFO/-/tree/main/src/%s.py" % filename
+        d['git.ligo'] = "https://git.ligo.org/wavestate/wavestate-LIGO-IFO/-/tree/main/src/%s.py" % filename + lno('L')
+    elif module.startswith('wavestate.control'):
+        d['github'] = "https://github.com/wavestate/wavestate-control/tree/main/src/%s.py" % filename + lno('L')
+    elif module.startswith('wavestate.model'):
+        d['github'] = "https://github.com/wavestate/wavestate-model/tree/main/src/%s.py" % filename + lno('L')
+    elif module.startswith('wavestate.iirrational'):
+        d['github'] = "https://github.com/wavestate/wavestate-iirrational/tree/main/src/%s.py" % filename + lno('L')
+    elif module.startswith('wavestate.AAA'):
+        d['github'] = "https://github.com/wavestate/wavestate-AAA/tree/main/src/%s.py" % filename + lno('L')
+    elif module.lower().startswith('gwinc'):
+        d['git.ligo'] = "https://git.ligo.org/gwinc/pygwinc/-/tree/master/gwinc/%s.py" % filename + lno('L')
     else:
-        return None, None
+        pass
+
+    return d
 
 def linkcode_resolve(domain, info):
     """in case linkcode is working but linkcode_ws is not
@@ -233,15 +316,64 @@ def linkcode_resolve(domain, info):
     return linkcode_ws_resolve(domain, info)[1]
 
 
-
-import os
-import re
 def autodoc_process_docstring(app, what, name, obj, options, lines):
     """Detects pytests and augments their documentation to include links to their output files
     """
-    tdir = os.path.join(app.srcdir, 'test_results')
+    tdirs = [
+        os.path.join(app.srcdir, test_results_folder),
+        # currently disabling other test pulls
+        # so that the workflow is "pristine"
+        # os.path.join(app.srcdir, 'test_archive'),
+    ]
+
+    def istest_check(fname):
+        istest = False
+        for tdir in tdirs:
+            tpath = os.path.join(tdir, fname)
+            if os.path.exists(tpath):
+                istest = True
+                break
+        return istest, tpath
+
+    def get_relpath_root(fpath, other):
+        source_path = os.path.relpath(fpath, app.srcdir)
+        source_path_inv_pre = os.path.relpath(app.srcdir, app.outdir)
+        source_path_inv_src = os.path.relpath(source_path_inv_pre, source_path)
+        source_path_inv_out = os.path.relpath('.', source_path)
+
+        if other.startswith('/'):
+            if other.startswith('//'):
+                other = os.path.join(source_path_inv_src, other[2:])
+                internal = True
+            else:
+                other = os.path.join(source_path_inv_out, other[1:])
+                internal = True
+        else:
+            internal = False
+        other = other.replace('_', r'\_')
+        return other
 
     if what == 'module':
+        # this determines if the module is a test-containing module
+        # could also just check if it corresponds to a folder in test_results
+        # or better yet, check if it has been run
+        ofile = getattr(obj, '__file__', None)
+        fpath, fname = os.path.split(ofile)
+        istest, tpath = istest_check(fname)
+        if hasattr(obj, 'tpath_join'):
+            if not istest:
+                lines.append("This is a pytest, but its test folder is missing. Some of the annotations of the tests may be missing.")
+            # print("MOD-lines: ", lines)
+            istest = True
+
+        # print("CHECK: ", ofile, istest)
+        if istest:
+            if not lines:
+                lines.append("")
+                lines.append("This is a pytest module needing documentation")
+                lines.append("")
+            reportname = '/_static/reports/all/{}'.format(fname.replace('.py', '.html'))
+            lines.append(r"Report in `report <{}>`__".format(get_relpath_root('_autosummary/name/', reportname)))
         return
 
     if what != 'function':
@@ -258,11 +390,8 @@ def autodoc_process_docstring(app, what, name, obj, options, lines):
 
     fpath, fname = os.path.split(ofile)
 
-    istest = False
-
-    tpath = os.path.join(tdir, fname)
-    if os.path.exists(tpath):
-        istest = True
+    istest, tpath = istest_check(fname)
+    # Note that the following code relies on tpath being set after the break
 
     tname = obj.__name__.split('.')[-1]
     # could also check if the containing module has pytest fixtures, but this seems to work
@@ -287,20 +416,28 @@ def autodoc_process_docstring(app, what, name, obj, options, lines):
             lines.append("")
 
         if mydirs:
-            print("COOL", mydirs)
+            # print("COOL", mydirs)
+            pass
 
         for d in mydirs:
             dpath = os.path.join(tpath, d)
             lines.append("")
             lines.append(".. collapse:: {}".format(d))
+            #TODO do some image conversion
+            # possibly using https://www.sphinx-doc.org/en/master/usage/extensions/imgconverter.html
+            # i.e. check if pdf is a single page, then have imgconvert rasterize it to directly include within the collapse
             lines.append("           ")
             for fpath in ordered_test_outputs(dpath):
-                lines.append("    * :download:`{}</{}>`".format(fpath, os.path.relpath(os.path.join(dpath, fpath), app.srcdir)))
+                #lines.append("    * :download:`{}</{}>`".format(fpath, os.path.relpath(os.path.join(dpath, fpath), app.srcdir)))
+                #lines.append("    * :download:`{}</{}>`".format(fpath, os.path.relpath(os.path.join(dpath, fpath), app.srcdir)))
+                print("CHECK", os.path.relpath(os.path.join(dpath, fpath), os.path.abspath(test_results_folder)))
+                rp = get_relpath_root('_autosummary/name/', os.path.join('/_static/test_results/', os.path.relpath(os.path.join(dpath, fpath), os.path.abspath(test_results_folder))))
+                print("relpath: ", fpath, rp)
+                lines.append(r"    * `{} <{}>`__".format(fpath, rp))
             lines.append("")
-        print("OUT: ", name)
-        for line in lines:
-            print(line)
+        # print("OUT: ", name)
     return
+
 
 def ordered_test_outputs(dpath):
     files = os.listdir(dpath)
@@ -314,4 +451,13 @@ def ordered_test_outputs(dpath):
         files[0:0] = [capname]
 
     return files
+
+
+def setup(app):
+    app.add_css_file("my_theme.css")
+    app.add_css_file("pygments_adjust.css")
+
+    # add the evennt handler to bond tests to their outputs
+    app.connect('autodoc-process-docstring', autodoc_process_docstring)
+    return
 

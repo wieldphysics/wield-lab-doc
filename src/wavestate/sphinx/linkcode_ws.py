@@ -12,6 +12,7 @@
     assigned to the linkcode_ws_resolve configuration parameter.
 """
 
+import os
 from typing import Any, Dict, Set
 
 from docutils import nodes
@@ -26,6 +27,7 @@ from sphinx.locale import _
 
 class LinkcodeError(SphinxError):
     category = "linkcode error"
+
 
 
 def doctree_read(app: Sphinx, doctree: Node) -> None:
@@ -43,9 +45,23 @@ def doctree_read(app: Sphinx, doctree: Node) -> None:
         'js': ['object', 'fullname'],
     }
 
+    # the use of doctree[0].source is a bit of a hack
+    # Sphinx does some transforms that clobber the source link
+    # of the root document
+    # luckily all children seem to keep theirs
+    def get_relpath_root():
+        srcpath, srcfile = os.path.split(doctree[0].source)
+        source_path = os.path.relpath(srcpath, app.srcdir)
+        source_path_inv_pre = os.path.relpath(app.srcdir, app.outdir)
+        source_path_inv_src = os.path.relpath(source_path_inv_pre, source_path)
+        source_path_inv_out = os.path.relpath('.', source_path)
+        return source_path_inv_src, source_path_inv_out
+    relpath_root = None
+    # print(type(doctree), type(doctree.document))
+    # print(doctree[0].source)
+
     for objnode in doctree.traverse(addnodes.desc):
         domain = objnode.get('domain')
-        uris: Set[str] = set()
         for signode in objnode:
             if not isinstance(signode, addnodes.desc_signature):
                 continue
@@ -61,22 +77,22 @@ def doctree_read(app: Sphinx, doctree: Node) -> None:
                 continue
 
             # Call user code to resolve the link
-            name, uri = resolve_ws_target(domain, info)
-            if not uri:
-                # no source
-                continue
-
-            # removing this to have more links
-            if uri in uris or not uri:
-                # only one link per name, please
-                # continue
-                pass
-            uris.add(uri)
-
-            inline = nodes.inline('', _('[{}]'.format(name)), classes=['viewcode-link'])
-            onlynode = addnodes.only(expr='html')
-            onlynode += nodes.reference('', '', inline, internal=False, refuri=uri)
-            signode += onlynode
+            map_name_uri = resolve_ws_target(domain, info)
+            for name, uri in map_name_uri.items():
+                internal = False
+                if uri.startswith('/'):
+                    if relpath_root is None:
+                        relpath_root = get_relpath_root()
+                    if uri.startswith('//'):
+                        uri = os.path.join(relpath_root[0], uri[2:])
+                        internal = True
+                    else:
+                        uri = os.path.join(relpath_root[1], uri[1:])
+                        internal = True
+                inline = nodes.inline('', _('[{}]'.format(name)), classes=['viewcode-link'])
+                onlynode = addnodes.only(expr='html')
+                onlynode += nodes.reference('', '', inline, internal=internal, refuri=uri)
+                signode += onlynode
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:

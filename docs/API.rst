@@ -1,7 +1,7 @@
-.. _API:
+.. _CODE:
 
-API Reference
-=============
+Code Reference
+++++++++++++++
 
 .. autosummary::
    :recursive:
@@ -18,5 +18,6 @@ API Reference
    wavestate.iirrational
    wavestate.model
    wavestate.LIGO.IFO
-   wavestate.devel
-   wavestate.epics.autocas
+   .. wavestate.devel
+   .. wavestate.epics.autocas
+   gwinc

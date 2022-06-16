@@ -1,16 +1,26 @@
-.. _index:
+Wavestate
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-wavestate
-====================================================
 
-Release v\ |version|. (:ref:`Installation <install>`)
+
 
 
 .. toctree::
     :maxdepth: 2
+    :includehidden:
 
-    TEST
-    API
+    about
+    overview
+    notebook-testing
+
+    ./LIGO-IFO/index
+
+
+.. toctree::
+    :hidden:
+    :caption: Technical 
+
+    ./API
 
 
 Packages
@@ -24,9 +34,7 @@ Versions
 
 .. autoattribute:: wavestate.bunch.__version__
 
-
 .. autoattribute:: wavestate.utilities.__version__
-
 
 .. autoattribute:: wavestate.pytest.__version__
 
@@ -49,3 +57,4 @@ Versions
 .. autoattribute:: wavestate.LIGO.IFO.__version__
 
 
+.. Release v\ |version|. (:ref:`Installation <install>`)

@@ -1,13 +1,13 @@
-.. _TEST:
+(test)=
 
-TEST
-=================================
+# TEST
 
 hello, I should be in the TOCtree
 
+```{eval-rst}
 .. collapse:: test of collapse
 
     * list item
-    * list2
     * list3
     * list4
+```

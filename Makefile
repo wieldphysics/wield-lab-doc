@@ -41,7 +41,10 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 livehtml:
-	sphinx-autobuild --ignore '*.#*' --ignore '*.pyc' --ignore '*.swp' --ignore '*.swo' -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html --open-browser
+	sphinx-autobuild --ignore '*.#*' --ignore '_autosummary' --ignore '*.pyc' --ignore '*.swp' --ignore '*.swo' -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html/docs --host='*' #--open-browser
+
+livehtml-theme:
+	sphinx-autobuild -a --watch '_templates' --watch '_static' --ignore '_autosummary' --ignore '*.#*' --ignore '*.pyc' --ignore '*.swp' --ignore '*.swo' -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html/docs --host='*' #--open-browser
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
