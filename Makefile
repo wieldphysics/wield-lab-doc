@@ -2,6 +2,7 @@
 #
 
 # You can set these variables from the command line.
+SHELL 			 := /bin/bash
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
@@ -39,6 +40,7 @@ help:
 
 clean:
 	-rm -rf $(BUILDDIR)/*
+	-rm -rf docs/_autosummary/
 
 livehtml:
 	sphinx-autobuild --ignore '*.#*' --ignore '_autosummary' --ignore '*.pyc' --ignore '*.swp' --ignore '*.swo' -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html/docs --host='*' #--open-browser
@@ -47,7 +49,9 @@ livehtml-theme:
 	sphinx-autobuild -a --watch '_templates' --watch '_static' --ignore '_autosummary' --ignore '*.#*' --ignore '*.pyc' --ignore '*.swp' --ignore '*.swo' -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html/docs --host='*' #--open-browser
 
 html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html --color 2> >(tee html-build.log >&2)
+	# strip the ANSI codes
+	sed -i -e 's/\x1b\[[0-9;]*m//g' html-build.log
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 

@@ -246,7 +246,7 @@ def linkcode_ws_resolve(domain, info):
         return {}
     if not info['module']:
         return {}
-    #print("INFO: ", info)
+    # print("INFO: ", info)
     module = info['module']
     fullname = info.get('fullname', None)
     filename = module.replace('.', '/')
@@ -358,6 +358,8 @@ def autodoc_process_docstring(app, what, name, obj, options, lines):
         # could also just check if it corresponds to a folder in test_results
         # or better yet, check if it has been run
         ofile = getattr(obj, '__file__', None)
+        if ofile is None:
+            return
         fpath, fname = os.path.split(ofile)
         istest, tpath = istest_check(fname)
         if hasattr(obj, 'tpath_join'):
@@ -423,16 +425,15 @@ def autodoc_process_docstring(app, what, name, obj, options, lines):
             dpath = os.path.join(tpath, d)
             lines.append("")
             lines.append(".. collapse:: {}".format(d))
-            #TODO do some image conversion
+            # TODO do some image conversion
             # possibly using https://www.sphinx-doc.org/en/master/usage/extensions/imgconverter.html
             # i.e. check if pdf is a single page, then have imgconvert rasterize it to directly include within the collapse
             lines.append("           ")
             for fpath in ordered_test_outputs(dpath):
-                #lines.append("    * :download:`{}</{}>`".format(fpath, os.path.relpath(os.path.join(dpath, fpath), app.srcdir)))
-                #lines.append("    * :download:`{}</{}>`".format(fpath, os.path.relpath(os.path.join(dpath, fpath), app.srcdir)))
-                print("CHECK", os.path.relpath(os.path.join(dpath, fpath), os.path.abspath(test_results_folder)))
+                # lines.append("    * :download:`{}</{}>`".format(fpath, os.path.relpath(os.path.join(dpath, fpath), app.srcdir)))
+                # print("CHECK", os.path.relpath(os.path.join(dpath, fpath), os.path.abspath(test_results_folder)))
                 rp = get_relpath_root('_autosummary/name/', os.path.join('/_static/test_results/', os.path.relpath(os.path.join(dpath, fpath), os.path.abspath(test_results_folder))))
-                print("relpath: ", fpath, rp)
+                # print("relpath: ", fpath, rp)
                 lines.append(r"    * `{} <{}>`__".format(fpath, rp))
             lines.append("")
         # print("OUT: ", name)

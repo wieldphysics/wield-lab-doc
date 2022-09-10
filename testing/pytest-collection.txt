@@ -2,7 +2,7 @@
 platform linux -- Python 3.9.13, pytest-7.1.2, pluggy-1.0.0
 rootdir: /home/mcculler/local/projects_sync/wavestate-project-mcculler/wavestate-doc/testing, configfile: pytest.ini
 plugins: xdist-2.5.0, forked-1.4.0, mock-3.7.0, requests-mock-1.9.3, timeout-2.1.0, ligo.skymap-0.5.3, cov-3.0.0, socket-0.5.1, metadata-2.0.1, flaky-3.7.0, html-3.1.1
-collected 752 items / 15 errors / 17 skipped
+collected 779 items / 3 errors / 17 skipped
 Module::pygwinc/test/budgets/test_budgets.py::pygwinc/test/budgets/test_budgets.py
   Function::test_load::pygwinc/test/budgets/test_budgets.py
   Function::test_update_ifo_struct::pygwinc/test/budgets/test_budgets.py
@@ -74,6 +74,46 @@ Package::telescopes::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telesc
     Function::T_FC_A2L::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_FC_A2L.py
   Module::T_FC_coatings.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_FC_coatings.py
     Function::T_FC_coatings::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_FC_coatings.py
+  Module::T_MM_CLF.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_CLF.py
+    Function::T_MM_CLF_COLtoOPO[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_CLF.py
+    Function::T_MM_CLF_OPOtoSQZT7[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_CLF.py
+  Module::T_MM_FCGS.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_FCGS.py
+    Function::T_MM_FCGS_COLtoZM1[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_FCGS.py
+    Function::T_MM_FCGS_FCtoSQZT7[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_FCGS.py
+  Module::T_MM_HAM8.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_HAM8.py
+    Function::T_MM_TRANS_FC2toSQZT8[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_HAM8.py
+    Function::T_MM_TRANS_FCGStoSQZT8::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_HAM8.py
+  Module::T_MM_OPO.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_OPO.py
+    Function::T_MM_SQZ_dump_system[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_OPO.py
+    Function::T_MM_OPO[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_OPO.py
+  Module::T_MM_PUMP.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_PUMP.py
+    Function::T_MM_PUMP_COLtoOPO[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_PUMP.py
+    Function::T_MM_PUMP_OPOtoSQZT7[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_PUMP.py
+  Module::T_MM_SK.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SK.py
+    Function::T_MM_SK_toSQZT7[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SK.py
+  Module::T_MM_SQZ.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+    Function::T_MM_SQZ_OPOtoFC2[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+    Function::T_MM_SQZ_FC2toSRM[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+    Function::T_MM_SQZ_VIPtoZM1[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+    Function::T_MM_SQZ_ZM1toZM4[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+    Function::T_MM_SQZ_VIPtoWFS[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+    Function::T_MM_SQZ_VIPtoHDYNE[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+    Function::T_MM_SQZ_VIPtoINSINS[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+    Function::T_VIP_connectivity[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+    Function::T_MM_SQZ_FCtoVIP[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+    Function::T_MM_SQZ_FCtoVIP_ZM2astig[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+    Function::T_MM_SQZ_FCtoVIP2[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+    Function::T_MM_SQZ_FCtoVIP_alt[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+    Function::T_MM_SQZ_SRMtoVIP[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+    Function::T_MM_IFO_SRMtoOMC[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
+  Module::T_MM_SQZ_scans.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ_scans.py
+    Function::T_MM_SQZ_OPOtoFC_offsetscan[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ_scans.py
+    Function::T_MM_SQZ_OPOtoFC_scan[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ_scans.py
+    Function::T_MM_SQZ_OPO_scan[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ_scans.py
+    Function::T_MM_SQZ_FCtoSRM_offsetscan[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ_scans.py
+    Function::T_MM_SQZ_FCtoSRM_scan[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ_scans.py
+    Function::T_MM_SQZ_FCtoSRM_IFO_scan[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ_scans.py
+    Function::T_MM_SQZ_OPO_MC[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ_scans.py
 Module::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LHO/post_ZM123/T_LHO_MM_SQZ_ZM123.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LHO/post_ZM123/T_LHO_MM_SQZ_ZM123.py
   Function::T_LHO_MM_SQZ_dump_system::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LHO/post_ZM123/T_LHO_MM_SQZ_ZM123.py
   Function::T_LHO_MM_SQZ_LHO_qfits::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LHO/post_ZM123/T_LHO_MM_SQZ_ZM123.py
@@ -111,6 +151,13 @@ Module::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/post_ZM123/T_L
   Function::T_LLO_MM_SQZ_LLO_qfits::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/post_ZM123/T_LLO_MM_SQZ_ZM123.py
   Function::T_LLO_MM_SQZ_LLO_ZM12_check::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/post_ZM123/T_LLO_MM_SQZ_ZM123.py
   Function::T_LLO_MM_SQZ_LLO_ZM1234::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/post_ZM123/T_LLO_MM_SQZ_ZM123.py
+Module::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_FCGS.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_FCGS.py
+  Function::T_MM_FCGS_COLtoZM1[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_FCGS.py
+Module::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_PUMP.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_PUMP.py
+  Function::T_MM_DiamondFiber::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_PUMP.py
+  Function::T_MM_Diamond_PUMP::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_PUMP.py
+  Function::T_MM_Diamond_PUMP_COLtoOPO[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_PUMP.py
+  Function::T_MM_FCGS_COLtoZM1[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_PUMP.py
 Module::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_SQZ.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_SQZ.py
   Function::T_MM_SQZ_VIPtoZM2::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_SQZ.py
   Function::T_MM_OPO_ZMRetrotoZM4::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_SQZ.py
@@ -123,6 +170,16 @@ Module::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_A2L.py::wavestat
   Function::T_LIGO_cavities_shifts_invert2::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_A2L.py
   Function::T_LIGO_cavities_shifts_test::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_A2L.py
   Function::T_A2L::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_A2L.py
+Module::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_MM.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_MM.py
+  Function::T_LIGO_MM_graph::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_MM.py
+  Function::T_LIGO_MM_arms::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_MM.py
+  Function::T_LIGO_MM_PRC::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_MM.py
+  Function::T_LIGO_MM_SRC[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_MM.py
+  Function::T_LIGO_MM_OMC::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_MM.py
+  Function::T_LIGO_MM_OO[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_MM.py
+  Function::T_LIGO_MM_PRC_optimize::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_MM.py
+Module::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_OMs.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_OMs.py
+  Function::T_LIGO_MM_OO[L1]::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_OMs.py
 Module::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_OPO.py::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_OPO.py
   Function::T_OPO_cavity::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_OPO.py
   Function::T_MM_OPO::wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_OPO.py
@@ -161,14 +218,6 @@ Module::wavestate-control/src/wavestate/control/SFLU/test/T_SFLU_nx.py::wavestat
   Function::T_networkx_lg::wavestate-control/src/wavestate/control/SFLU/test/T_SFLU_nx.py
 Module::wavestate-control/src/wavestate/control/linear_values/test/T_linear_values.py::wavestate-control/src/wavestate/control/linear_values/test/T_linear_values.py
   Function::T_linear_values::wavestate-control/src/wavestate/control/linear_values/test/T_linear_values.py
-Module::wavestate-control/src/wavestate/control/statespace/dense/test/test_IFO_model.py::wavestate-control/src/wavestate/control/statespace/dense/test/test_IFO_model.py
-  Function::test_IFO_model::wavestate-control/src/wavestate/control/statespace/dense/test/test_IFO_model.py
-  Function::test_reduce::wavestate-control/src/wavestate/control/statespace/dense/test/test_IFO_model.py
-  Function::test_reducer2::wavestate-control/src/wavestate/control/statespace/dense/test/test_IFO_model.py
-  Function::test_percolate_names::wavestate-control/src/wavestate/control/statespace/dense/test/test_IFO_model.py
-  Function::test_controllable::wavestate-control/src/wavestate/control/statespace/dense/test/test_IFO_model.py
-  Function::test_controllable_noQRPN::wavestate-control/src/wavestate/control/statespace/dense/test/test_IFO_model.py
-  Function::test_save::wavestate-control/src/wavestate/control/statespace/dense/test/test_IFO_model.py
 Module::wavestate-control/src/wavestate/control/statespace/dense/test/test_SS_algorithms.py::wavestate-control/src/wavestate/control/statespace/dense/test/test_SS_algorithms.py
   Function::test_ABCDE::wavestate-control/src/wavestate/control/statespace/dense/test/test_SS_algorithms.py
   Function::test_2x2_ABCDE_c2r::wavestate-control/src/wavestate/control/statespace/dense/test/test_SS_algorithms.py
@@ -182,22 +231,9 @@ Module::wavestate-control/src/wavestate/control/statespace/dense/test/test_SS_mo
 Module::wavestate-control/src/wavestate/control/statespace/dense/test/test_delay.py::wavestate-control/src/wavestate/control/statespace/dense/test/test_delay.py
   Function::test_delay::wavestate-control/src/wavestate/control/statespace/dense/test/test_delay.py
   Function::test_big_delay::wavestate-control/src/wavestate/control/statespace/dense/test/test_delay.py
-Module::wavestate-control/src/wavestate/control/statespace/dense/test/test_escher.py::wavestate-control/src/wavestate/control/statespace/dense/test/test_escher.py
-  Function::test_slycotSS::wavestate-control/src/wavestate/control/statespace/dense/test/test_escher.py
-  Function::test_rescale_slycot::wavestate-control/src/wavestate/control/statespace/dense/test/test_escher.py
 Module::wavestate-control/src/wavestate/control/statespace/dense/test/test_matrix.py::wavestate-control/src/wavestate/control/statespace/dense/test/test_matrix.py
   Function::test_QRH::wavestate-control/src/wavestate/control/statespace/dense/test/test_matrix.py
   Function::test_QRHpivot::wavestate-control/src/wavestate/control/statespace/dense/test/test_matrix.py
-Module::wavestate-control/src/wavestate/control/statespace/dense/test/test_minreal.py::wavestate-control/src/wavestate/control/statespace/dense/test/test_minreal.py
-  Function::test_controllable::wavestate-control/src/wavestate/control/statespace/dense/test/test_minreal.py
-  Function::test_controllable_octave::wavestate-control/src/wavestate/control/statespace/dense/test/test_minreal.py
-  Function::test_controllable_matlab::wavestate-control/src/wavestate/control/statespace/dense/test/test_minreal.py
-  Function::test_controllable_slycotDSS::wavestate-control/src/wavestate/control/statespace/dense/test/test_minreal.py
-  Function::test_controllable_slycotSS::wavestate-control/src/wavestate/control/statespace/dense/test/test_minreal.py
-  Function::test_controllable_slycot::wavestate-control/src/wavestate/control/statespace/dense/test/test_minreal.py
-  Function::test_controllable_guptri::wavestate-control/src/wavestate/control/statespace/dense/test/test_minreal.py
-  Function::test_controllable_slycot_xfer::wavestate-control/src/wavestate/control/statespace/dense/test/test_minreal.py
-  Function::test_controllable_guptri2::wavestate-control/src/wavestate/control/statespace/dense/test/test_minreal.py
 Module::wavestate-control/src/wavestate/control/statespace/test/test_electronics.py::wavestate-control/src/wavestate/control/statespace/test/test_electronics.py
   Function::test_opamp::wavestate-control/src/wavestate/control/statespace/test/test_electronics.py
   Function::test_opamp_fb::wavestate-control/src/wavestate/control/statespace/test/test_electronics.py
@@ -902,270 +938,6 @@ Module::wavestate-quantum/src/wavestate/quantum/test/T_qop_loss.py::wavestate-qu
   Function::T_gkp_wigner_loss::wavestate-quantum/src/wavestate/quantum/test/T_qop_loss.py
 
 ==================================== ERRORS ====================================
-_ ERROR collecting wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_CLF.py _
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:262: in pytest_pycollect_makeitem
-    return list(collector._genfunctions(name, obj))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:489: in _genfunctions
-    self.ihook.pytest_generate_tests.call_extra(methods, dict(metafunc=metafunc))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:292: in call_extra
-    return self(**kwargs)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-conftest.py:128: in pytest_generate_tests
-    metafunc.parametrize("IFO", IFO)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1320: in parametrize
-    newcallspec = callspec.setmulti(
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1125: in setmulti
-    raise ValueError(f"duplicate {arg!r}")
-E   ValueError: duplicate 'IFO'
-_ ERROR collecting wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_FCGS.py _
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:262: in pytest_pycollect_makeitem
-    return list(collector._genfunctions(name, obj))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:489: in _genfunctions
-    self.ihook.pytest_generate_tests.call_extra(methods, dict(metafunc=metafunc))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:292: in call_extra
-    return self(**kwargs)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-conftest.py:128: in pytest_generate_tests
-    metafunc.parametrize("IFO", IFO)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1320: in parametrize
-    newcallspec = callspec.setmulti(
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1125: in setmulti
-    raise ValueError(f"duplicate {arg!r}")
-E   ValueError: duplicate 'IFO'
-_ ERROR collecting wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_HAM8.py _
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:262: in pytest_pycollect_makeitem
-    return list(collector._genfunctions(name, obj))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:489: in _genfunctions
-    self.ihook.pytest_generate_tests.call_extra(methods, dict(metafunc=metafunc))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:292: in call_extra
-    return self(**kwargs)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-conftest.py:128: in pytest_generate_tests
-    metafunc.parametrize("IFO", IFO)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1320: in parametrize
-    newcallspec = callspec.setmulti(
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1125: in setmulti
-    raise ValueError(f"duplicate {arg!r}")
-E   ValueError: duplicate 'IFO'
-_ ERROR collecting wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_OPO.py _
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:262: in pytest_pycollect_makeitem
-    return list(collector._genfunctions(name, obj))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:489: in _genfunctions
-    self.ihook.pytest_generate_tests.call_extra(methods, dict(metafunc=metafunc))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:292: in call_extra
-    return self(**kwargs)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-conftest.py:128: in pytest_generate_tests
-    metafunc.parametrize("IFO", IFO)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1320: in parametrize
-    newcallspec = callspec.setmulti(
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1125: in setmulti
-    raise ValueError(f"duplicate {arg!r}")
-E   ValueError: duplicate 'IFO'
-_ ERROR collecting wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_PUMP.py _
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:262: in pytest_pycollect_makeitem
-    return list(collector._genfunctions(name, obj))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:489: in _genfunctions
-    self.ihook.pytest_generate_tests.call_extra(methods, dict(metafunc=metafunc))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:292: in call_extra
-    return self(**kwargs)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-conftest.py:128: in pytest_generate_tests
-    metafunc.parametrize("IFO", IFO)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1320: in parametrize
-    newcallspec = callspec.setmulti(
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1125: in setmulti
-    raise ValueError(f"duplicate {arg!r}")
-E   ValueError: duplicate 'IFO'
-_ ERROR collecting wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SK.py _
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:262: in pytest_pycollect_makeitem
-    return list(collector._genfunctions(name, obj))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:489: in _genfunctions
-    self.ihook.pytest_generate_tests.call_extra(methods, dict(metafunc=metafunc))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:292: in call_extra
-    return self(**kwargs)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-conftest.py:128: in pytest_generate_tests
-    metafunc.parametrize("IFO", IFO)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1320: in parametrize
-    newcallspec = callspec.setmulti(
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1125: in setmulti
-    raise ValueError(f"duplicate {arg!r}")
-E   ValueError: duplicate 'IFO'
-_ ERROR collecting wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py _
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:262: in pytest_pycollect_makeitem
-    return list(collector._genfunctions(name, obj))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:489: in _genfunctions
-    self.ihook.pytest_generate_tests.call_extra(methods, dict(metafunc=metafunc))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:292: in call_extra
-    return self(**kwargs)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-conftest.py:128: in pytest_generate_tests
-    metafunc.parametrize("IFO", IFO)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1320: in parametrize
-    newcallspec = callspec.setmulti(
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1125: in setmulti
-    raise ValueError(f"duplicate {arg!r}")
-E   ValueError: duplicate 'IFO'
-_ ERROR collecting wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ_scans.py _
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:262: in pytest_pycollect_makeitem
-    return list(collector._genfunctions(name, obj))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:489: in _genfunctions
-    self.ihook.pytest_generate_tests.call_extra(methods, dict(metafunc=metafunc))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:292: in call_extra
-    return self(**kwargs)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-conftest.py:128: in pytest_generate_tests
-    metafunc.parametrize("IFO", IFO)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1320: in parametrize
-    newcallspec = callspec.setmulti(
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1125: in setmulti
-    raise ValueError(f"duplicate {arg!r}")
-E   ValueError: duplicate 'IFO'
-_ ERROR collecting wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_FCGS.py _
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:262: in pytest_pycollect_makeitem
-    return list(collector._genfunctions(name, obj))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:489: in _genfunctions
-    self.ihook.pytest_generate_tests.call_extra(methods, dict(metafunc=metafunc))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:292: in call_extra
-    return self(**kwargs)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-conftest.py:128: in pytest_generate_tests
-    metafunc.parametrize("IFO", IFO)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1320: in parametrize
-    newcallspec = callspec.setmulti(
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1125: in setmulti
-    raise ValueError(f"duplicate {arg!r}")
-E   ValueError: duplicate 'IFO'
-_ ERROR collecting wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_PUMP.py _
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:262: in pytest_pycollect_makeitem
-    return list(collector._genfunctions(name, obj))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:489: in _genfunctions
-    self.ihook.pytest_generate_tests.call_extra(methods, dict(metafunc=metafunc))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:292: in call_extra
-    return self(**kwargs)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-conftest.py:128: in pytest_generate_tests
-    metafunc.parametrize("IFO", IFO)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1320: in parametrize
-    newcallspec = callspec.setmulti(
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1125: in setmulti
-    raise ValueError(f"duplicate {arg!r}")
-E   ValueError: duplicate 'IFO'
-_ ERROR collecting wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_MM.py _
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:262: in pytest_pycollect_makeitem
-    return list(collector._genfunctions(name, obj))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:489: in _genfunctions
-    self.ihook.pytest_generate_tests.call_extra(methods, dict(metafunc=metafunc))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:292: in call_extra
-    return self(**kwargs)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-conftest.py:128: in pytest_generate_tests
-    metafunc.parametrize("IFO", IFO)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1320: in parametrize
-    newcallspec = callspec.setmulti(
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1125: in setmulti
-    raise ValueError(f"duplicate {arg!r}")
-E   ValueError: duplicate 'IFO'
-_ ERROR collecting wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_OMs.py _
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:262: in pytest_pycollect_makeitem
-    return list(collector._genfunctions(name, obj))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:489: in _genfunctions
-    self.ihook.pytest_generate_tests.call_extra(methods, dict(metafunc=metafunc))
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:292: in call_extra
-    return self(**kwargs)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_hooks.py:265: in __call__
-    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/pluggy/_manager.py:80: in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-conftest.py:128: in pytest_generate_tests
-    metafunc.parametrize("IFO", IFO)
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1320: in parametrize
-    newcallspec = callspec.setmulti(
-/home/mcculler/.conda/envs/py39/lib/python3.9/site-packages/_pytest/python.py:1125: in setmulti
-    raise ValueError(f"duplicate {arg!r}")
-E   ValueError: duplicate 'IFO'
 ____ ERROR collecting wavestate-epics-autocas/test/program/test_autosave.py ____
 ImportError while importing test module '/home/mcculler/local/projects_sync/wavestate-project-mcculler/wavestate-doc/testing/wavestate-epics-autocas/test/program/test_autosave.py'.
 Hint: make sure your test modules/packages have valid Python names.
@@ -1266,20 +1038,8 @@ wavestate-epics-autocas/test/saver/test_saver.py:93
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 =========================== short test summary info ============================
-ERROR wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_CLF.py
-ERROR wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_FCGS.py
-ERROR wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_HAM8.py
-ERROR wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_OPO.py
-ERROR wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_PUMP.py
-ERROR wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SK.py
-ERROR wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ.py
-ERROR wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/Apl/design/telescopes/T_MM_SQZ_scans.py
-ERROR wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_FCGS.py
-ERROR wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/as_built/FC_LLO/pre_ZM123/T_LLO_MM_PUMP.py
-ERROR wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_MM.py - ValueEr...
-ERROR wavestate-LIGO-IFO/src/wavestate/LIGO/IFO/design/T_LIGO_OMs.py - ValueE...
 ERROR wavestate-epics-autocas/test/program/test_autosave.py
 ERROR wavestate-epics-autocas/test/program/test_program.py
 ERROR wavestate-epics-autocas/test/reloader/test_reload.py
 !!!!!!!!!!!!!!!!!!!!!!!!! _pytest.outcomes.Exit: Done! !!!!!!!!!!!!!!!!!!!!!!!!!
-=================== 752 tests collected, 15 errors in 1.48s ====================
+==================== 779 tests collected, 3 errors in 2.69s ====================
