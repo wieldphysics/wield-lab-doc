@@ -19,13 +19,13 @@ coverage:
 		sed -i -e 's|>/[^<>]*/gwinc/|>gwinc/|' test_results/coverage/*.html
 
 
-TESTS = $(shell python3 -m wavestate.pytest.parse_collection pytest-collection.txt 2> /dev/null)
+TESTS = $(shell python3 -m wield.pytest.parse_collection pytest-collection.txt 2> /dev/null)
 
 $(TESTS): %: test_results/reports/%.html
 		@echo $*
 
 test_results/reports/%.html: pytest-collection.txt
-		$(eval FILE := $(shell python3 -m wavestate.pytest.parse_collection pytest-collection.txt $*))
+		$(eval FILE := $(shell python3 -m wield.pytest.parse_collection pytest-collection.txt $*))
 		$(eval PREHTML := test_results/reports/inprogress/$*.html)
 		-mkdir -p test_results/reports/inprogress
 		ln --force -T -s ../assets test_results/reports/inprogress/assets;
