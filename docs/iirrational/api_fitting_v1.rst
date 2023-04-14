@@ -3,9 +3,9 @@
 Fitting API
 ============
 
-The library using a versioning scheme to preserve old heuristics in future versions. There will be an wavestate.iirrational.vN submodule that is **larger** Than the current full version number. This one will _not_ be api stable or heuristics stable. The versions equal or below the current full version will be preserved.
+The library using a versioning scheme to preserve old heuristics in future versions. There will be an wield.iirrational.vN submodule that is **larger** Than the current full version number. This one will _not_ be api stable or heuristics stable. The versions equal or below the current full version will be preserved.
 
-.. module:: wavestate.iirrational.v1
+.. module:: wield.iirrational.v1
 
 ---------------------
 v1 fitting interface
@@ -17,7 +17,7 @@ v1 fitting interface
 Fitter Objects
 ---------------------
 
-.. autofunction:: wavestate.iirrational.MRF.MultiReprFilterZ
+.. autofunction:: wield.iirrational.MRF.MultiReprFilterZ
 
 
 ---------------------

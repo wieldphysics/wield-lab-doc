@@ -8,17 +8,17 @@ Code Reference
    :template: custom-module-template.rst
    :toctree: _autosummary
 
-   wavestate.bunch
-   wavestate.pytest
-   wavestate.utilities
-   wavestate.declarative
-   wavestate.quantum
-   wavestate.control
-   wavestate.AAA
-   wavestate.iirrational
-   wavestate.model
-   .. wavestate.devel
-   .. wavestate.epics.autocas
+   wield.bunch
+   wield.pytest
+   wield.utilities
+   wield.declarative
+   wield.quantum
+   wield.control
+   wield.AAA
+   wield.iirrational
+   wield.model
+   .. wield.devel
+   .. wield.epics.autocas
 
 
 LIGO Codes:
@@ -29,8 +29,8 @@ LIGO Codes:
    :template: custom-module-template.rst
    :toctree: _autosummary
 
-   wavestate.LIGO.IFO
-   wavestate.LIGO.mcculler
+   wield.LIGO.IFO
+   wield.LIGO.mcculler
 
 
 External Codes:
@@ -47,29 +47,29 @@ External Codes:
 Versions
 =========================
 
-.. autoattribute:: wavestate.bunch.__version__
+.. autoattribute:: wield.bunch.__version__
 
-.. autoattribute:: wavestate.utilities.__version__
+.. autoattribute:: wield.utilities.__version__
 
-.. autoattribute:: wavestate.pytest.__version__
-
-
-.. autoattribute:: wavestate.declarative.__version__
+.. autoattribute:: wield.pytest.__version__
 
 
-.. autoattribute:: wavestate.quantum.__version__
+.. autoattribute:: wield.declarative.__version__
 
 
-.. autoattribute:: wavestate.AAA.__version__
+.. autoattribute:: wield.quantum.__version__
 
 
-.. autoattribute:: wavestate.control.__version__
+.. autoattribute:: wield.AAA.__version__
 
 
-.. autoattribute:: wavestate.model.__version__
+.. autoattribute:: wield.control.__version__
 
 
-.. autoattribute:: wavestate.LIGO.IFO.__version__
+.. autoattribute:: wield.model.__version__
+
+
+.. autoattribute:: wield.LIGO.IFO.__version__
 
 
 .. Release v\ |version|. (:ref:`Installation <install>`)

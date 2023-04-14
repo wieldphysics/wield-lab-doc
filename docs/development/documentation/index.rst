@@ -3,7 +3,7 @@
 Documentation
 ====================================================
 
-This section documents useful methods and resources for setting up and maintaining the sphinx documentation for wavestate
+This section documents useful methods and resources for setting up and maintaining the sphinx documentation for wield
 
 
 CSS tricks

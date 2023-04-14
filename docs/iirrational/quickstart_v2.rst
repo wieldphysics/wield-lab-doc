@@ -6,9 +6,9 @@ Quickstart
 ==========
 
 .. currentmodule:: IIRrational
-.. currentmodule:: wavestate.iirrational.v2
+.. currentmodule:: wield.iirrational.v2
 
-:ref:`Install wavestate.iirrational <install>` as a first step. Either the command line form
+:ref:`Install wield.iirrational <install>` as a first step. Either the command line form
 or the python function from pip
 
 The calling convention of the data2filter function can be viewed fully from
@@ -188,8 +188,8 @@ Python Style
 
 .. code-block:: python
 
-  dataset = wavestate.iirrational.load('OplevPlant.mat')
-  fit = wavestate.iirrational.v2.data2filter(
+  dataset = wield.iirrational.load('OplevPlant.mat')
+  fit = wield.iirrational.v2.data2filter(
       data = dataset['ap']['ex']['plant'],
       F_Hz = dataset['ap']['ex']['ff'],
       #most of the command line arguments can go here

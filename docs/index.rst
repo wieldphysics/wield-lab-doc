@@ -10,7 +10,7 @@ with coding and "notebook style" development of scientific modeling and
 analysis. This style aims to minimize the iteration time between editing code
 and seeing either plots or numbers to compare. As code or analysis is developed
 and matures, it often increases in length, complexity and, sometimes, the
-run-time. The utilities and idioms of wavestate are built to facilitate
+run-time. The utilities and idioms of wield are built to facilitate
 translating code between notebooks, "test suite notebooks", and module code. See
 `Idioms`_.
 
