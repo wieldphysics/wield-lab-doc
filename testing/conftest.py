@@ -10,12 +10,12 @@
 """
 import pytest
 import os
-import wavestate.pytest
+import wield.pytest
 
-from wavestate.model.pytest import (  # noqa
+from wield.model.pytest import (  # noqa
     algo_log,
 )
 
 pytest_plugins = [
-    "wavestate.pytest.plugin",
+    "wield.pytest.plugin",
 ]

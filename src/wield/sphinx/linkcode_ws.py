@@ -7,7 +7,7 @@
     :copyright: Copyright 2007-2021 by the Sphinx team, see AUTHORS.
     :license: BSD, see LICENSE for details.
 
-    modified for wavestate to allow configuration of the [source] link by
+    modified for wield to allow configuration of the [source] link by
     changing linkcode_resolve to output both a name, uri pair. It is
     assigned to the linkcode_ws_resolve configuration parameter.
 """

@@ -11,7 +11,7 @@ import numpy as np
 import pytest
 
 
-from wavestate.pytest.fixtures import (  # noqa: F401
+from wield.pytest.fixtures import (  # noqa: F401
     tpath_join,
     dprint,
     fpath_join,

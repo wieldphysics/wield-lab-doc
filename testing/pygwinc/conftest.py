@@ -8,13 +8,13 @@
 # with details inline in source files, comments, and docstrings.
 """
 This conftest is a stub to replace the fixtures in gwinc's conftest with those
-used by wavestate.
+used by wield.
 """
 
 import pytest
 import os
-import wavestate.pytest
-from wavestate.pytest.fixtures import (  # noqa
+import wield.pytest
+from wield.pytest.fixtures import (  # noqa
     capture,
     tpath_join,
     plot,
