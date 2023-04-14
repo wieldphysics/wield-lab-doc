@@ -15,7 +15,7 @@ coverage:
 		rm test_results/coverage/* || true
 		coverage html -d test_results/coverage/
 		# this is a bit hacky I know. Should use a greedy regex or more restrictive
-		sed -i -e 's|>/[^<>]*/wavestate/|>wavestate/|' test_results/coverage/*.html
+		sed -i -e 's|>/[^<>]*/wield/|>wield/|' test_results/coverage/*.html
 		sed -i -e 's|>/[^<>]*/gwinc/|>gwinc/|' test_results/coverage/*.html
 
 
@@ -33,7 +33,7 @@ test_results/reports/%.html: pytest-collection.txt
 		-mkdir -p test_results/reports/coverage
 		#-pytest $(FILE) --ws-skip-slow --html=$(PREHTML)
 		# This long command runs the specific pytest and generates a coverage file
-		coverage run --source=wavestate --source=gwinc --branch --context=$* --data-file=test_results/reports/coverage/$* -m pytest -c 'pytest.ini' --rootdir='.' $(FILE) --ws-skip-slow --html=$(PREHTML)
+		coverage run --source=wield --source=gwinc --branch --context=$* --data-file=test_results/reports/coverage/$* -m pytest -c 'pytest.ini' --rootdir='.' $(FILE) --ws-skip-slow --html=$(PREHTML)
 		if [ "$$?" -eq 0 ]; \
     then \
 			mv $(PREHTML) $@; \

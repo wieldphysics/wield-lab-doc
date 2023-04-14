@@ -149,16 +149,15 @@ doctest:
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
 apidoc:
-	sphinx-apidoc -o apidoc/pytest/ --implicit-namespaces ../wavestate-pytest/src/wavestate/
-	sphinx-apidoc -o apidoc/bunch/ --implicit-namespaces ../wavestate-bunch/src/wavestate/
-	sphinx-apidoc -o apidoc/utilities/ --implicit-namespaces ../wavestate-utilities/src/wavestate/
-	sphinx-apidoc -o apidoc/quantum/ --implicit-namespaces ../wavestate-quantum/src/wavestate/
-	sphinx-apidoc -o apidoc/control/ --implicit-namespaces ../wavestate-control/src/wavestate/
-	sphinx-apidoc -o apidoc/devel/ --implicit-namespaces ../wavestate-devel/src/wavestate/
-	sphinx-apidoc -o apidoc/AAA/ --implicit-namespaces ../wavestate-AAA/src/wavestate/
-	sphinx-apidoc -o apidoc/model/ --implicit-namespaces ../wavestate-model/src/wavestate/
-	sphinx-apidoc -o apidoc/LIGO-IFO/ --implicit-namespaces ../wavestate-LIGO-IFO/src/wavestate/
-	sphinx-apidoc -o apidoc/iirrational/ --implicit-namespaces ../wavestate-iirrational/src/wavestate/
+	sphinx-apidoc -o apidoc/pytest/ --implicit-namespaces ../wield-pytest/src/wield/
+	sphinx-apidoc -o apidoc/bunch/ --implicit-namespaces ../wield-bunch/src/wield/
+	sphinx-apidoc -o apidoc/utilities/ --implicit-namespaces ../wield-utilities/src/wield/
+	sphinx-apidoc -o apidoc/quantum/ --implicit-namespaces ../wield-quantum/src/wield/
+	sphinx-apidoc -o apidoc/control/ --implicit-namespaces ../wield-control/src/wield/
+	sphinx-apidoc -o apidoc/devel/ --implicit-namespaces ../wield-devel/src/wield/
+	sphinx-apidoc -o apidoc/model/ --implicit-namespaces ../wield-model/src/wield/
+	sphinx-apidoc -o apidoc/LIGO-IFO/ --implicit-namespaces ../wield-LIGO-IFO/src/wield/
+	sphinx-apidoc -o apidoc/iirrational/ --implicit-namespaces ../wield-iirrational/src/wield/
 
 ipynb: $(IPYRST)
 
