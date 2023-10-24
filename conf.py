@@ -241,6 +241,7 @@ try:
 except Exception:
     coverage_d = None
 
+
 def linkcode_ws_resolve(domain, info):
     if domain != 'py':
         return {}
@@ -273,6 +274,7 @@ def linkcode_ws_resolve(domain, info):
     if coverage_d is not None:
         pyfname = filename + '.py'
         cov_fname = coverage_d.get(pyfname, None)
+        # print("COV_FNAME", pyfname, cov_fname)
         if cov_fname is not None:
             # converted to output relative to the outdir
             # cov_fpath = os.path.join('/', coverage_folder, cov_fname)
