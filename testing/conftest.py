@@ -12,10 +12,6 @@ import pytest
 import os
 import wield.pytest
 
-from wield.model.pytest import (  # noqa
-    algo_log,
-)
-
 pytest_plugins = [
     "wield.pytest.plugin",
 ]
