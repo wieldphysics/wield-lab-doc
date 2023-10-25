@@ -1,13 +1,1 @@
-# -*- coding: utf-8 -*-
-# SPDX-License-Identifier: CC0-1.0
-# SPDX-FileCopyrightText: © 2021 Massachusetts Institute of Technology.
-# SPDX-FileCopyrightText: © 2021 Lee McCuller <mcculler@caltech.edu>
-# NOTICE: authors should document their contributions in concisely in NOTICE
-# with details inline in source files, comments, and docstrings.
-
-[build-system]
-requires = [
-    "setuptools>=45",
-    "wheel",
-]
-build-backend = "setuptools.build_meta"
+../wield-doc/pyproject.toml
