@@ -6,6 +6,7 @@
 
 test_results/
 _autosummary/
+full-build-flag.txt
 
 textmat*.*
 timer.update
