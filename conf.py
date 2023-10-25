@@ -24,15 +24,17 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 """
-#import sys
+import sys
 import os
 import re
 
 import inspect
 import importlib
+import urllib.parse
 from wield.sphinx import ws_parse_cov_html
 
 # sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('./testing/'))
 
 
 # -- General configuration ------------------------------------------------
@@ -376,7 +378,7 @@ def autodoc_process_docstring(app, what, name, obj, options, lines):
                 lines.append("")
                 lines.append("This is a pytest module needing documentation")
                 lines.append("")
-            reportname = '/_static/reports/all/{}'.format(fname.replace('.py', '.html'))
+            reportname = '/_static/reports/{}'.format(fname.replace('.py', '.html'))
             lines.append(r"Report in `report <{}>`__".format(get_relpath_root('_autosummary/name/', reportname)))
         return
 
@@ -436,6 +438,7 @@ def autodoc_process_docstring(app, what, name, obj, options, lines):
                 # print("CHECK", os.path.relpath(os.path.join(dpath, fpath), os.path.abspath(test_results_folder)))
                 rp = get_relpath_root('_autosummary/name/', os.path.join('/_static/test_results/', os.path.relpath(os.path.join(dpath, fpath), os.path.abspath(test_results_folder))))
                 # print("relpath: ", fpath, rp)
+                #lines.append(r"    * `{} <{}>`__".format(fpath, urllib.parse.quote(rp)))
                 lines.append(r"    * `{} <{}>`__".format(fpath, rp))
             lines.append("")
         # print("OUT: ", name)

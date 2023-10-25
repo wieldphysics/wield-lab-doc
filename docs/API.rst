@@ -14,7 +14,6 @@ Code Reference
    wield.declarative
    wield.quantum
    wield.control
-   wield.AAA
    wield.iirrational
    wield.model
    .. wield.devel
@@ -42,6 +41,21 @@ External Codes:
    :toctree: _autosummary
 
    gwinc
+
+
+Tests:
+==========
+
+.. toctree::
+   :maxdepth: 1
+
+   ./tests
+
+
+.. Tests:
+.. =======================
+.. 
+.. .. include:: ./tests.rst
 
 
 Versions

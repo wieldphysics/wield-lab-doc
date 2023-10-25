@@ -10,6 +10,9 @@ collect: pytest-collection.txt
 pytest-collection.txt:
 	pytest  --rootdir='.' -c 'pytest.ini' --ws-co --html='' | tee pytest-collection.txt
 
+tests.rst: pytest-collection.txt
+	python3 -m wield.pytest.parse_collection pytest-collection.txt --api_rst > tests.rst
+
 coverage: 
 		coverage combine --keep test_results/reports/coverage/*
 		rm test_results/coverage/* || true
@@ -60,7 +63,7 @@ $(TESTS): %: test_results/reports/all/%.html
 # 			false; \
 #     fi
 
-test_results/reports/all/%.html:  pytest-collection.txt
+test_results/reports/all/%.html:  
 		$(eval FILE := $(shell python3 -m wield.pytest.parse_collection pytest-collection.txt $*))
 		$(eval PREHTML := test_results/reports/inprogress/$*.html)
 		-mkdir -p test_results/reports/inprogress
@@ -89,7 +92,7 @@ print:
 	@echo $(TESTS);
 
 
-all: $(TESTS)
+all: $(TESTS) tests.rst pytest-collection.txt
 
 
 .DEFAULT_GOAL := all

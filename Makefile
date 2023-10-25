@@ -50,6 +50,7 @@ livehtml-theme:
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html --color 2> >(tee html-build.log >&2)
+	cat html-build.log | aha -b > build/sphinx/html/html-build.log.html
 	# strip the ANSI codes
 	sed -i -e 's/\x1b\[[0-9;]*m//g' html-build.log
 	@echo
@@ -158,6 +159,7 @@ apidoc:
 	sphinx-apidoc -o apidoc/model/ --implicit-namespaces ../wield-model/src/wield/
 	sphinx-apidoc -o apidoc/LIGO-IFO/ --implicit-namespaces ../wield-LIGO-IFO/src/wield/
 	sphinx-apidoc -o apidoc/iirrational/ --implicit-namespaces ../wield-iirrational/src/wield/
+	sphinx-apidoc -o apidoc/gwinc/ --implicit-namespaces ../pygwinc/test/  ../pygwinc/gwinc/
 
 ipynb: $(IPYRST)
 
