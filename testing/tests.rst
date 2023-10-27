@@ -1,19 +1,4 @@
 
-pygwinc
-----------
-
-.. autosummary::
-   :recursive:
-   :template: custom-module-template.rst
-   :toctree: _autosummary
-
-   pygwinc.test.GQuEST.test_CE2_photon_counting
-   pygwinc.test.GQuEST.test_GQ_budget
-   pygwinc.test.budgets.test_budgets
-   pygwinc.test.inherit.test_inherit
-   pygwinc.test.struct.test_struct
-
-
 wield.LIGO.IFO.Apl.design.cavity
 -----------------------------------
 
@@ -121,17 +106,6 @@ wield.LIGO.IFO.test
    wield.LIGO.IFO.test.test_LIGO_A2Lish
 
 
-wield.LIGO.mcculler.O4_projections
--------------------------------------
-
-.. autosummary::
-   :recursive:
-   :template: custom-module-template.rst
-   :toctree: _autosummary
-
-   wield.LIGO.mcculler.O4_projections.T_O4projections_spectra
-
-
 wield.LIGO.mcculler.SQZ_FDL.LHO
 ----------------------------------
 
@@ -140,13 +114,10 @@ wield.LIGO.mcculler.SQZ_FDL.LHO
    :template: custom-module-template.rst
    :toctree: _autosummary
 
-   wield.LIGO.mcculler.SQZ_FDL.LHO.T_LHO_FDL_stage0
-   wield.LIGO.mcculler.SQZ_FDL.LHO.T_LHO_FDL_stage1
    wield.LIGO.mcculler.SQZ_FDL.LHO.T_LHO_FDL_stage2
    wield.LIGO.mcculler.SQZ_FDL.LHO.T_LHO_FDL_stage3
    wield.LIGO.mcculler.SQZ_FDL.LHO.T_LHO_FDL_stage3_testing
    wield.LIGO.mcculler.SQZ_FDL.LHO.T_gwinc
-   wield.LIGO.mcculler.SQZ_FDL.LHO.T_spectra
    wield.LIGO.mcculler.SQZ_FDL.LHO.common.T_model_testing
 
 
@@ -158,9 +129,6 @@ wield.LIGO.mcculler.SQZ_FDL.LLO
    :template: custom-module-template.rst
    :toctree: _autosummary
 
-   wield.LIGO.mcculler.SQZ_FDL.LLO.T_LLO_FDL_stage0
-   wield.LIGO.mcculler.SQZ_FDL.LLO.T_LLO_FDL_stage1
-   wield.LIGO.mcculler.SQZ_FDL.LLO.T_LLO_FDL_stage2
    wield.LIGO.mcculler.SQZ_FDL.LLO.T_LLO_FDL_stage3
    wield.LIGO.mcculler.SQZ_FDL.LLO.T_LLO_FDL_stage3_para
    wield.LIGO.mcculler.SQZ_FDL.LLO.T_LLO_FDL_stage3_testing
@@ -194,18 +162,6 @@ wield.LIGO.mcculler.SQZ_FDL.OPO_FC_IFO
    wield.LIGO.mcculler.SQZ_FDL.OPO_FC_IFO.OPO.T_OPO_O3vsO4
 
 
-wield.LIGO.mcculler.SQZ_FDL.plots
-------------------------------------
-
-.. autosummary::
-   :recursive:
-   :template: custom-module-template.rst
-   :toctree: _autosummary
-
-   wield.LIGO.mcculler.SQZ_FDL.plots.T_paper
-   wield.LIGO.mcculler.SQZ_FDL.plots.T_plots
-
-
 wield.LIGO.mcculler.filter_cavity
 ------------------------------------
 
@@ -215,17 +171,6 @@ wield.LIGO.mcculler.filter_cavity
    :toctree: _autosummary
 
    wield.LIGO.mcculler.filter_cavity.test_FC1_SUSPOINT_fits
-
-
-wield.LIGO.mcculler.ian_macmillan
-------------------------------------
-
-.. autosummary::
-   :recursive:
-   :template: custom-module-template.rst
-   :toctree: _autosummary
-
-   wield.LIGO.mcculler.ian_macmillan.T_HSTS_control
 
 
 wield.LIGO.mcculler.mirror_maps
@@ -272,20 +217,6 @@ wield.control.AAA
    wield.control.AAA.test.test_AAA
    wield.control.AAA.test.test_AAA_algo
    wield.control.AAA.test.test_AAA_present
-
-
-wield.control.ACE
---------------------
-
-.. autosummary::
-   :recursive:
-   :template: custom-module-template.rst
-   :toctree: _autosummary
-
-   wield.control.ACE.test.test_electronics
-   wield.control.ACE.test.test_lqe
-   wield.control.ACE.test.test_reduce
-   wield.control.ACE.test.test_statespace
 
 
 wield.control.SFLU
@@ -419,17 +350,5 @@ wield.quantum
    wield.quantum.test.T_qop_Q
    wield.quantum.test.T_qop_gkp
    wield.quantum.test.T_qop_loss
-
-
-wield_declarative
---------------------
-
-.. autosummary::
-   :recursive:
-   :template: custom-module-template.rst
-   :toctree: _autosummary
-
-   wield_declarative.test.argparse.test_args
-   wield_declarative.test.test_properties
 
 
