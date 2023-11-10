@@ -13,7 +13,8 @@ Release v\ |version|. (:ref:`Installation <install>`)
     .. TEST
     .. TEST2
     ./API
-
+    .. ./testbedPaperASC.ipynb
+    .. ./tests.rst
 
 .. toctree::
     :maxdepth: 5
@@ -21,6 +22,11 @@ Release v\ |version|. (:ref:`Installation <install>`)
     :caption: wield
 
     ws-docs/index
+
+
+
+
+
 
 
 Packages
