@@ -696,18 +696,55 @@ wield_declarative
    wield_declarative.test.test_properties
 
 
-wield_ligo_mcculler
+
+notebooks:
 ----------------------
 
-.. autosummary::
-   :recursive:
-   :template: custom-module-template.rst
-   :toctree: _autosummary
 
-   wield_ligo_mcculler.wield_mcculler.ian_macmillan.SUS.DampSUS
-   wield_ligo_mcculler.wield_mcculler.ian_macmillan.SUS.generate_Triple_Model_Production
-   wield_ligo_mcculler.wield_mcculler.ian_macmillan.SUS.generate_quad_model
-   wield_ligo_mcculler.wield_mcculler.ian_macmillan.old.ControlsModeling
-   wield_ligo_mcculler.wield_mcculler.ian_macmillan.old.ControlsWithDict
+ -  :doc:`buzz/testbedPaperASC.ipynb <testing/buzz/testbedPaperASC>`
+ -  :doc:`buzz/testbedPaperASC_Y.ipynb <testing/buzz/testbedPaperASC_Y>`
+ -  :doc:`buzz/testbedPaperDAMP.ipynb <testing/buzz/testbedPaperDAMP>`
+ -  :doc:`buzz/testbedPaperDamp_nonT.ipynb <testing/buzz/testbedPaperDamp_nonT>`
+ -  :doc:`buzz/testbedPaperLSC.ipynb <testing/buzz/testbedPaperLSC>`
+ -  :doc:`laserfiltercavity/BT_finesse.ipynb <testing/laserfiltercavity/BT_finesse>`
+ -  :doc:`laserfiltercavity/Gouy_phase.ipynb <testing/laserfiltercavity/Gouy_phase>`
+ -  :doc:`laserfiltercavity/window_design.ipynb <testing/laserfiltercavity/window_design>`
+ -  :doc:`wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/ControlsWithDict.ipynb <testing/wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/ControlsWithDict>`
+ -  :doc:`wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/SUS/DampSUS.ipynb <testing/wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/SUS/DampSUS>`
+ -  :doc:`wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/SUS/generate_Triple_Model_Production.ipynb <testing/wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/SUS/generate_Triple_Model_Production>`
+ -  :doc:`wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/SUS/generate_quad_model.ipynb <testing/wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/SUS/generate_quad_model>`
+ -  :doc:`wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/old/ControlsModeling.ipynb <testing/wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/old/ControlsModeling>`
+ -  :doc:`wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/old/ControlsWithDict.ipynb <testing/wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/old/ControlsWithDict>`
+ -  :doc:`wield_ligo_mcculler/wield_mcculler/ian_macmillan/ControlsWithDict.ipynb <testing/wield_ligo_mcculler/wield_mcculler/ian_macmillan/ControlsWithDict>`
+ -  :doc:`wield_ligo_mcculler/wield_mcculler/ian_macmillan/SUS/DampSUS.ipynb <testing/wield_ligo_mcculler/wield_mcculler/ian_macmillan/SUS/DampSUS>`
+ -  :doc:`wield_ligo_mcculler/wield_mcculler/ian_macmillan/SUS/generate_Triple_Model_Production.ipynb <testing/wield_ligo_mcculler/wield_mcculler/ian_macmillan/SUS/generate_Triple_Model_Production>`
+ -  :doc:`wield_ligo_mcculler/wield_mcculler/ian_macmillan/SUS/generate_quad_model.ipynb <testing/wield_ligo_mcculler/wield_mcculler/ian_macmillan/SUS/generate_quad_model>`
+ -  :doc:`wield_ligo_mcculler/wield_mcculler/ian_macmillan/old/ControlsModeling.ipynb <testing/wield_ligo_mcculler/wield_mcculler/ian_macmillan/old/ControlsModeling>`
+ -  :doc:`wield_ligo_mcculler/wield_mcculler/ian_macmillan/old/ControlsWithDict.ipynb <testing/wield_ligo_mcculler/wield_mcculler/ian_macmillan/old/ControlsWithDict>`
 
+
+.. toctree::
+   :maxdepth:1
+   :hidden:
+
+    testing/buzz/testbedPaperASC
+    testing/buzz/testbedPaperASC_Y
+    testing/buzz/testbedPaperDAMP
+    testing/buzz/testbedPaperDamp_nonT
+    testing/buzz/testbedPaperLSC
+    testing/laserfiltercavity/BT_finesse
+    testing/laserfiltercavity/Gouy_phase
+    testing/laserfiltercavity/window_design
+    testing/wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/ControlsWithDict
+    testing/wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/SUS/DampSUS
+    testing/wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/SUS/generate_Triple_Model_Production
+    testing/wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/SUS/generate_quad_model
+    testing/wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/old/ControlsModeling
+    testing/wield_ligo_mcculler/src/wield/LIGO/mcculler/ian_macmillan/old/ControlsWithDict
+    testing/wield_ligo_mcculler/wield_mcculler/ian_macmillan/ControlsWithDict
+    testing/wield_ligo_mcculler/wield_mcculler/ian_macmillan/SUS/DampSUS
+    testing/wield_ligo_mcculler/wield_mcculler/ian_macmillan/SUS/generate_Triple_Model_Production
+    testing/wield_ligo_mcculler/wield_mcculler/ian_macmillan/SUS/generate_quad_model
+    testing/wield_ligo_mcculler/wield_mcculler/ian_macmillan/old/ControlsModeling
+    testing/wield_ligo_mcculler/wield_mcculler/ian_macmillan/old/ControlsWithDict
 
