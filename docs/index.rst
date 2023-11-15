@@ -26,9 +26,6 @@ Release v\ |version|. (:ref:`Installation <install>`)
 
 
 
-
-
-
 Packages
 -------------------------
 .. highlight:: python
