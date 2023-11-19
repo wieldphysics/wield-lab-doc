@@ -5,5 +5,12 @@ pytest-collection.txt
 pytest-collection.html
 .coverage
 
+conda-env.txt
+conda-list.txt
+conda-list-nopip.txt
+conda-export.txt
+pip-list.txt
+pip-freeze.txt
+
 fast-mode-flag.txt
 
