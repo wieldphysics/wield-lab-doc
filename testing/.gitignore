@@ -11,6 +11,8 @@ conda-list-nopip.txt
 conda-export.txt
 pip-list.txt
 pip-freeze.txt
+python-import1.txt
+python-import2.txt
 
 fast-mode-flag.txt
 
