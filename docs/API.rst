@@ -19,8 +19,9 @@ Code Reference
    wield.model
    wield.mcculler
    wield.gquest
-   wield.epics.autocas
    buzz
+..    import breaks things currently
+..    wield.epics.autocas
 
    .. wield.devel
 

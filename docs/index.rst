@@ -12,6 +12,7 @@ Release v\ |version|. (:ref:`Installation <install>`)
 
     .. TEST
     .. TEST2
+    ./gquest-design/index.rst
     ./API
     .. ./testbedPaperASC.ipynb
     .. ./tests.rst
