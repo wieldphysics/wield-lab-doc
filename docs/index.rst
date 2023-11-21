@@ -25,13 +25,8 @@ Release v\ |version|. (:ref:`Installation <install>`)
     ws-docs/index
 
 
-
-
 Packages
 -------------------------
 .. highlight:: python
    :linenothreshold: 5
-
-
-
 
