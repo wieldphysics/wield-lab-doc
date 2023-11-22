@@ -1,1 +1,12 @@
-../wield-doc/conf.py
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: © 2021 Massachusetts Institute of Technology.
+# SPDX-FileCopyrightText: © 2021 Lee McCuller <mcculler@caltech.edu>
+# NOTICE: authors should document their contributions in concisely in NOTICE
+# with details inline in source files, comments, and docstrings.
+
+import os
+os.environ.setdefault('TESTING_DIR', "./testing")
+
+from wield.sphinx.conf import *

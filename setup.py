@@ -1,1 +1,0 @@
-../wield-doc/setup.py
