@@ -16,16 +16,15 @@ import os
 import wield.pytest
 from wield.pytest.fixtures import (  # noqa
     capture,
-    tpath_join,
+    tjoin,
     plot,
     tpath_preclear,
     tpath,
-    tpath_join,
+    tjoin,
     fpath,
-    fpath_join,
+    fjoin,
     closefigs,
     test_trigger,
-    dprint,
 )
 
 
@@ -59,5 +58,3 @@ try:
 except ImportError:
     from pprint import pprint, pformat
 
-
-pprint = dprint
