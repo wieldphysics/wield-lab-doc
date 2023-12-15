@@ -20,10 +20,6 @@ Code Reference
    wield.mcculler
    wield.gquest
    buzz
-..    import breaks things currently
-..    wield.epics.autocas
-
-   .. wield.devel
 
 
 LIGO Codes:
@@ -63,6 +59,11 @@ Tests:
 .. 
 .. .. include:: ./tests.rst
 
+
+..    import breaks things currently
+..    wield.epics.autocas
+
+.. wield.devel
 
 Versions
 =========================
